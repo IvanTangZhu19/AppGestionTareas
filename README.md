@@ -7,7 +7,7 @@ Aplicación de gestión de tareas académicas desarrollado en el curso de Aplica
 - Contexto: Sistema de gestion de tareas y proyectos
 
 
-Rama: diseño
+Rama: main
 
 Aqui se encuentra lo del diseño: diagramas, presentación de usuarios o personas, diseños en papel, y diseño en figma
 
