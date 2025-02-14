@@ -2,9 +2,9 @@
 
 Aplicación de gestión de tareas académicas desarrollado en el curso de Aplicaciones móviles
 
-Tema: gestion de tareas academicas
-Usuario: Estudiantes
-Contexto: Sistema de gestion de tareas y proyectos
+- Tema: Universidad - Académico
+- Usuario: Estudiantes
+- Contexto: Sistema de gestion de tareas y proyectos
 
 
 Rama: diseño
