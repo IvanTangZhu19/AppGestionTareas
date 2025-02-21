@@ -1,16 +1,13 @@
 $color_fondo: gray;
 $color_fuente : white;
-
-.header {
+.menu{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    bottom: 0;
     width: 364px;
-    font-family: 'Arial';
     background-color: $color_fondo;
     padding: 10px;
     color: $color_fuente;
-}
-
-h2{
-    margin: 10px;
+    position: fixed;
 }
