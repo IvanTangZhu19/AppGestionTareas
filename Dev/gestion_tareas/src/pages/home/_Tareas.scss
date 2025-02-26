@@ -1,0 +1,19 @@
+$color_fondo: #D9D9D9;
+
+.tareas{
+    display: flex;
+}
+
+.contenedor_tarea{
+    width: 100px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: $color_fondo;
+    padding: 5px;
+    border-radius: 20px;
+    p{
+        margin: 5px;
+    }
+}

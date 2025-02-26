@@ -1,0 +1,17 @@
+@use "./Tareas";
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    .subtitulo{
+        margin-top: 2px;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-bottom: 5px;
+    }
+}
