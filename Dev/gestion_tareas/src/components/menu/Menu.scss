@@ -1,13 +1,25 @@
 $color_fondo: gray;
 $color_fuente : white;
+$color_activo : black;
 .menu{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     bottom: 0;
+    padding: 15px;
     width: 364px;
     background-color: $color_fondo;
-    padding: 10px;
     color: $color_fuente;
     position: fixed;
+}
+
+.enlace{
+    text-decoration: none;
+    color: $color_fuente;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.activo{
+    background-color: $color_activo;
 }

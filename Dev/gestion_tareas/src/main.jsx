@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router"
 import './index.css'
 import Home from './pages/home/Home.jsx'
 import Tareas from './pages/tareas/Tareas.jsx'
@@ -16,17 +16,17 @@ import Menu from './components/menu/Menu.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Header/>
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/tareas" element={<Tareas />} />
-        <Route path="/proyectos" element={<Proyectos />} />
-        <Route path="/tareas/crear" element={<Crear_Tarea />} />
-        <Route path="/proyectos/crear" element={<Crear_Proyecto />} />
-        <Route path="/tareas/editar" element={<Editar_Tarea />} />
-        <Route path="/proyectos/editar" element={<Editar_Proyecto />} />
-      </Routes>
-    </Router>
-    <Menu/>
+          <Route path="/" element={<Home />} />
+          <Route path="/tareas" element={<Tareas />} />
+          <Route path="/proyectos" element={<Proyectos />} />
+          <Route path="/tareas/crear" element={<Crear_Tarea />} />
+          <Route path="/proyectos/crear" element={<Crear_Proyecto />} />
+          <Route path="/tareas/editar" element={<Editar_Tarea />} />
+          <Route path="/proyectos/editar" element={<Editar_Proyecto />} />
+        </Routes>
+        <Menu/>
+    </BrowserRouter>
   </StrictMode>,
 )
