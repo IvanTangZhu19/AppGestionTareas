@@ -1,0 +1,16 @@
+$color_agregar: gray;
+$color_boton: black;
+
+.boton_agregar{
+    background-color: $color_agregar;
+    position: fixed;
+    padding: 10px;
+    bottom: 120px;
+    left: 320px;
+    border-radius: 30px;
+    font-size: 40px;
+    .enlace{
+        text-decoration: none;
+        color: $color_boton;
+    }
+}

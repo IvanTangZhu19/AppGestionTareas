@@ -1,7 +1,8 @@
 $color_fondo: #D9D9D9;
 
-.tareas{
+.tareasInicio{
     display: flex;
+    flex-direction: row;
 }
 
 .contenedor_tarea{

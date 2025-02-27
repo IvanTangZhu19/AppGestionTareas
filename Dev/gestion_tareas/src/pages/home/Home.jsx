@@ -13,7 +13,7 @@ function Home() {
             <span/>
             <h2>Inicio</h2>
             <p className="subtitulo">Tareas pendientes</p>
-            <div className="tareas">
+            <div className="tareasInicio">
                 {tareas.map((tarea, index) => (
                     <div key={index} className="contenedor_tarea">
                         <p>{tarea.nombre}</p>

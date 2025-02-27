@@ -1,0 +1,44 @@
+$color_fondo: #D9D9D9;
+$color_botones: gray;
+
+.tareas{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor_tarea_largo{
+    width: 280px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    background-color: $color_fondo;
+    padding: 5px;
+    border-radius: 20px 20px 20px 0;
+    p{
+        margin: 5px;
+    }
+    .nombre_fecha{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.botones{
+    flex-direction: row;
+    margin-left: 20px;
+    margin-top: 0;
+    button{
+        padding: 10px;
+        font-size: 16px;
+        background-color: $color_botones;
+    }
+    .editar{
+        border-bottom-left-radius: 15px;
+    }
+    .completar{
+        border-bottom-right-radius: 15px;
+    }
+}
