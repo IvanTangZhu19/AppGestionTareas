@@ -4,6 +4,7 @@ $color_botones: gray;
 .tareas{
     display: flex;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 
 .contenedor_tarea_largo{
@@ -27,16 +28,26 @@ $color_botones: gray;
 }
 
 .botones{
+    display: flex;
     flex-direction: row;
     margin-left: 20px;
     margin-top: 0;
     button{
+        cursor: pointer;
         padding: 10px;
         font-size: 16px;
         background-color: $color_botones;
+        margin-right: 0;
+        box-shadow: none;
+        border: 1px solid black;
     }
     .editar{
+        text-decoration: none;
         border-bottom-left-radius: 15px;
+        .enlace_editar{
+            text-decoration: none;
+            color: black;
+        }
     }
     .completar{
         border-bottom-right-radius: 15px;

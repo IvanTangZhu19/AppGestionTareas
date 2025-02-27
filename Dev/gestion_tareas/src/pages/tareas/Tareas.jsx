@@ -24,7 +24,9 @@ function Tarea() {
                             <p>{tarea.descripcion}</p>
                         </div>
                         <div className="botones">
-                            <button className="editar">Editar</button>
+                            <button className="editar">
+                                <NavLink to="/tareas/editar" className="enlace_editar">Editar</NavLink>
+                            </button>
                             <button>Eliminar</button>
                             <button className="completar">Completar</button>
                         </div>
