@@ -9,8 +9,10 @@ $color_fuente : white;
     background-color: $color_fondo_header;
     padding: 10px;
     color: $color_fuente;
-}
-
-h2{
-    margin: 10px;
+    img{
+        width: 110px
+    }
+    h2{
+        margin: 10px;
+    }
 }
