@@ -23,7 +23,7 @@ function Editar_proyecto() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Lógica para guardar cambios
-        console.log("Proyecto actualizada:", formData);
+        console.log("Proyecto actualizado:", formData);
     };
     return (
         <div className="contenedor-formulario">
