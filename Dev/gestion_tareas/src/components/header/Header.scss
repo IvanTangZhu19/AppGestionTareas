@@ -1,4 +1,4 @@
-$color_fondo: gray;
+$color_fondo_header: #35524A;
 $color_fuente : white;
 
 .header {
@@ -6,7 +6,7 @@ $color_fuente : white;
     flex-wrap: wrap;
     width: 364px;
     font-family: 'Arial';
-    background-color: $color_fondo;
+    background-color: $color_fondo_header;
     padding: 10px;
     color: $color_fuente;
 }

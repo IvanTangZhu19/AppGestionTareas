@@ -1,6 +1,7 @@
-$color_fondo: gray;
+$color_fondo: #35524A;
 $color_fuente : white;
-$color_activo : black;
+$color_activo : #74bba8;
+$color_activo_fuente : black;
 .menu{
     display: flex;
     flex-wrap: wrap;
@@ -21,5 +22,6 @@ $color_activo : black;
 }
 
 .activo{
+    color: $color_activo_fuente;
     background-color: $color_activo;
 }

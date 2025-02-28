@@ -1,5 +1,5 @@
-$color_fondo: #D9D9D9;
-$color_botones: gray;
+$color_fondo_contenedores: #627C85;
+$color_botones: #779CAB;
 
 .tareas{
     display: flex;
@@ -14,7 +14,7 @@ $color_botones: gray;
     margin-top: 20px;
     margin-bottom: 0;
     margin-left: 20px;
-    background-color: $color_fondo;
+    background-color: $color_fondo_contenedores;
     padding: 5px;
     border-radius: 20px 20px 20px 0;
     p{
@@ -42,6 +42,7 @@ $color_botones: gray;
         border: 1px solid black;
     }
     .editar{
+        //background-color: gray;
         text-decoration: none;
         border-bottom-left-radius: 15px;
         .enlace_editar{
@@ -49,7 +50,11 @@ $color_botones: gray;
             color: black;
         }
     }
+    .eliminar{
+        //background-color: gray;
+    }
     .completar{
+        //background-color: gray;
         border-bottom-right-radius: 15px;
     }
 }

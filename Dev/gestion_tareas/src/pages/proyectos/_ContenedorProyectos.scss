@@ -1,5 +1,5 @@
-$color_fondo: #D9D9D9;
-$color_botones: gray;
+$color_fondo_contenedores: #627C85;
+$color_botones: #779CAB;
 
 .proyectos{
     display: flex;
@@ -14,7 +14,7 @@ $color_botones: gray;
     margin-top: 20px;
     margin-bottom: 0;
     margin-left: 20px;
-    background-color: $color_fondo;
+    background-color: $color_fondo_contenedores;
     padding: 5px;
     border-radius: 20px 20px 20px 0;
     p{
