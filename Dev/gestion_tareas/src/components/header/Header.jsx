@@ -3,7 +3,7 @@ function Header() {
     return (
         <header className="header">
             <h2>LOGO</h2>
-            <h2>Study Flow</h2>
+            <h2>TaskMaster</h2>
         </header>
     );
 }

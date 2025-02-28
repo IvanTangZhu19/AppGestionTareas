@@ -32,7 +32,6 @@ function Proyecto() {
                                 <NavLink to="/proyectos/editar/1" className="enlace_editar">Editar</NavLink>
                             </button>
                             <button>Eliminar</button>
-                            <button className="completar">Completar</button>
                         </div>
                     </div>
                 ))}

@@ -21,7 +21,7 @@ function Tarea() {
                                 <p>{tarea.nombre}</p>
                                 <p>{tarea.fecha.toLocaleDateString('es-ES')}</p>
                             </div>
-                            <p>{tarea.descripcion}</p>
+                            <p>Descripción: {tarea.descripcion}</p>
                         </div>
                         <div className="botones">
                             <button className="editar">
