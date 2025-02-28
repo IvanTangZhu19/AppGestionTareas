@@ -29,7 +29,8 @@ function Editar_Tarea() {
     };
 
     return (
-        <div className="contenedor">
+        <div className="contenedor-formulario">
+            <span/>
             <header className="header-edicion">
                 <h2>Editar tarea</h2>
             </header>
@@ -78,12 +79,6 @@ function Editar_Tarea() {
                     <button type="submit" className="boton-guardar">Guardar cambios</button>
                 </div>
             </form>
-
-            <nav className="navegacion">
-                <NavLink to="/">Inicio</NavLink>
-                <NavLink to="/tareas">Tareas</NavLink>
-                <NavLink to="/proyectos">Proyectos</NavLink>
-            </nav>
         </div>
     );
 }

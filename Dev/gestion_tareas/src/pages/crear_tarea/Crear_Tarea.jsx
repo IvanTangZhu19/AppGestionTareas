@@ -18,6 +18,7 @@ function Crear_Tarea() {
 
     return (
         <div className="contenedor-formulario">
+            <span/>
             <h2>Crear tarea</h2>
             <form onSubmit={handleSubmit}>
                 <div className="campo-formulario">

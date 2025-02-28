@@ -1,64 +1,57 @@
-@use "./ContenedorTareas";
-@use "./BotonAgregar";
-
-.contenedor{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    h2{
-        font-size: 30px;
-        text-align: center;
-    }
-    .subtitulo{
-        margin-top: 2px;
-        font-size: 20px;
-        margin-left: 20px;
-        margin-bottom: 5px;
-    }
-}
 // Estilos para formularios
 .contenedor-formulario {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-
     h2 {
+        font-size: 30px;
         text-align: center;
         margin-bottom: 30px;
+    }
+    form{
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
 .campo-formulario {
     margin-bottom: 20px;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     label {
-        display: block;
-        margin-bottom: 5px;
+        width: 120px;
+        font-size: 20px;
+        margin-bottom: 10px;
         font-weight: bold;
     }
 
     input, textarea, select {
-        width: 100%;
-        padding: 8px;
+        width: 200px;
+        padding: 2px;
         border: 1px solid #ccc;
         border-radius: 4px;
     }
 }
 
-.botones-formulario {
+.botones-accion {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 30px;
 
     button {
-        @extend .boton_agregar;
+        cursor: pointer;
+        border: none;
+        position: none;
         padding: 10px 20px;
         font-size: 16px;
+        background-color: gray;
+        border-radius: 20px;
     }
 
-    .cancelar {
-        @extend .enlace;
+    .boton-cancelar {
+        color: black;
+        text-decoration: none;
+        border-radius: 20px;
         padding: 10px 20px;
         background-color: #ff4444;
+        margin-right: 20px;
     }
 }
