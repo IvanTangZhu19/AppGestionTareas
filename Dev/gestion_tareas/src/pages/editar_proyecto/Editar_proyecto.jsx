@@ -60,7 +60,7 @@ function Editar_proyecto() {
                 </div>
 
                 <div className="botones-accion">
-                    <NavLink to="/tareas" className="boton-cancelar">Cancelar</NavLink>
+                    <NavLink to="/proyectos" className="boton-cancelar">Cancelar</NavLink>
                     <button type="submit" className="boton-guardar">Guardar cambios</button>
                 </div>
             </form>

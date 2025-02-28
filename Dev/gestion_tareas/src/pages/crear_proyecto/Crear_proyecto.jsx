@@ -48,7 +48,7 @@ function Crear_Proyecto() {
                 </div>
 
                 <div className="botones-formulario">
-                    <NavLink to="/tareas" className="cancelar">Cancelar</NavLink>
+                    <NavLink to="/proyectos" className="cancelar">Cancelar</NavLink>
                     <button type="submit">Crear</button>
                 </div>
             </form>
