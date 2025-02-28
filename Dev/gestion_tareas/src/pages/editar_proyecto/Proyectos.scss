@@ -1,0 +1,57 @@
+// Estilos para formularios
+.contenedor-formulario {
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    form{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+.campo-formulario {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    label {
+        width: 120px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    input, textarea, select {
+        width: 200px;
+        padding: 2px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+}
+
+.botones-accion {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    button {
+        cursor: pointer;
+        border: none;
+        position: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: gray;
+        border-radius: 20px;
+    }
+
+    .boton-cancelar {
+        color: black;
+        text-decoration: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        background-color: #ff4444;
+        margin-right: 20px;
+    }
+}
