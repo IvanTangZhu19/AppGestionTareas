@@ -1,0 +1,55 @@
+$color_fondo: #D9D9D9;
+$color_botones: gray;
+
+.proyectos{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.contenedor_proyecto_largo{
+    width: 280px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    background-color: $color_fondo;
+    padding: 5px;
+    border-radius: 20px 20px 20px 0;
+    p{
+        margin: 5px;
+    }
+    .nombre{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-top: 0;
+    button{
+        cursor: pointer;
+        padding: 10px;
+        font-size: 16px;
+        background-color: $color_botones;
+        margin-right: 0;
+        box-shadow: none;
+        border: 1px solid black;
+    }
+    .editar{
+        text-decoration: none;
+        border-bottom-left-radius: 15px;
+        .enlace_editar{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .completar{
+        border-bottom-right-radius: 15px;
+    }
+}

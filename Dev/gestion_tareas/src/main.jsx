@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/tareas/crear" element={<Crear_Tarea />} />
           <Route path="/proyectos/crear" element={<Crear_Proyecto />} />
           <Route path="/tareas/editar/:id" element={<Editar_Tarea />} />
-          <Route path="/proyectos/editar" element={<Editar_Proyecto />} />
+          <Route path="/proyectos/editar/:id" element={<Editar_Proyecto />} />
         </Routes>
         <Menu/>
     </BrowserRouter>
