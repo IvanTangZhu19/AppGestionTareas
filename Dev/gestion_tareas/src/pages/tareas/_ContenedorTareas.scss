@@ -42,7 +42,7 @@ $color_botones: #779CAB;
         border: 1px solid black;
     }
     .editar{
-        //background-color: gray;
+        //background-color: yellow;
         text-decoration: none;
         border-bottom-left-radius: 15px;
         .enlace_editar{
@@ -51,10 +51,10 @@ $color_botones: #779CAB;
         }
     }
     .eliminar{
-        //background-color: gray;
+        //background-color: red;
     }
     .completar{
-        //background-color: gray;
+        //background-color: green;
         border-bottom-right-radius: 15px;
     }
 }

@@ -25,8 +25,7 @@ function Tarea() {
                         </div>
                         <div className="botones">
                             <button className="editar">
-                                <NavLink to="/tareas/editar/:id" className="enlace_editar">Editar</NavLink>
-                                
+                                <NavLink to={`/tareas/editar/${index}`} className="enlace_editar">Editar</NavLink>
                             </button>
                             <button className="eliminar">Eliminar</button>
                             <button className="completar">Completar</button>

@@ -1,13 +1,23 @@
 import "./Proyectos.scss";
 import React, { useState, useEffect } from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Proyecto() {
     const [proyectos, setProyectos] = useState([]);
-    
+    const navigate = useNavigate();
+
     useEffect(() => {
         setProyectos(traerProyectos());
     }, []);
+
+    const handleEliminar = (index) => {
+        const confirmacion = window.confirm("¿Estás seguro de que deseas eliminar este proyecto?");
+        if (confirmacion) {
+            //const nuevosProyectos = proyectos.filter((_, i) => i !== index);
+            //setProyectos(nuevosProyectos);
+            navigate("/proyectos");
+        }
+    };
     return (
         <div className="contenedor_proyectos">
             <span/>
@@ -27,11 +37,11 @@ function Proyecto() {
                                 ))}
                             </div>
                         </div>
-                        <div className="botones">
+                        <div className="botones_proyectos">
                             <button className="editar">
                                 <NavLink to="/proyectos/editar/1" className="enlace_editar">Editar</NavLink>
                             </button>
-                            <button>Eliminar</button>
+                            <button className="eliminar" onClick={() => handleEliminar(index)}>Eliminar</button>
                         </div>
                     </div>
                 ))}
