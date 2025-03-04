@@ -4,9 +4,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 100px;
     h2{
         font-size: 30px;
         text-align: center;
+    }
+    .margen{
+        margin-left: 30px;
     }
     .subtitulo{
         margin-top: 2px;

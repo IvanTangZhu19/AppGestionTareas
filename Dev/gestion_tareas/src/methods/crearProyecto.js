@@ -4,6 +4,7 @@ function crearProyecto(data){
         localStorage.setItem('proyectos', JSON.stringify(
             [
                 {
+                    "id": 1,
                     "titulo": "Predeterminado",
                     "descripcion": "Proyecto predeterminado",
                     "fecha": null,
@@ -13,7 +14,9 @@ function crearProyecto(data){
             ]
         ));
     }
+    const id = proyectos.length +1;
     const proyecto = {
+        "id": id,
         "titulo": data.titulo,
         "descripcion": data.descripcion,
         "fecha": data.fecha,
