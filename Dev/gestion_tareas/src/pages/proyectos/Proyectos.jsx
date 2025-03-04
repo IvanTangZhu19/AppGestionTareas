@@ -1,6 +1,7 @@
 import "./Proyectos.scss";
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from "react-router-dom";
+import traerProyectos from "./../../methods/traerProyectos";
 
 function Proyecto() {
     const [proyectos, setProyectos] = useState([]);
@@ -29,6 +30,7 @@ function Proyecto() {
                         <div key={index} className="contenedor_proyecto_largo">
                             <div className="nombre">
                                 <p>{proyecto.titulo}</p>
+                                <p>{proyecto.fecha}</p>
                             </div>
                             <p>Descripción: {proyecto.descripcion}</p>
                             <div>
@@ -51,29 +53,30 @@ function Proyecto() {
     );
 }
 
-function traerProyectos(){
-    const proyectos = [
-        {
-            "titulo": "Predeterminado",
-            "descripcion": "Proyecto ...",
-            "fecha": null,
-            "tareas": [
-                {
-                    "nombre": "Tarea de cálculo",
-                    "descripcion": "Descripcion de la tarea de cálculo que consiste en resolver ejercicios 1,2,3 del libro ...",
-                    "estado": "pendiente",
-                    "fecha": new Date("2021-10-10")
-                },
-                {
-                    "nombre": "Tarea de astronomía",
-                    "descripcion": "Descripcion de la tarea 1",
-                    "estado": "pendiente",
-                    "fecha": new Date("2021-10-10")
-                }
-            ]
-        },
-    ];
-    return proyectos;
-}
+// function traerProyectos(){
+//     const proyectos = traerProyectos();
+//     // const proyectos = [
+//     //     {
+//     //         "titulo": "Predeterminado",
+//     //         "descripcion": "Proyecto ...",
+//     //         "fecha": null,
+//     //         "tareas": [
+//     //             {
+//     //                 "nombre": "Tarea de cálculo",
+//     //                 "descripcion": "Descripcion de la tarea de cálculo que consiste en resolver ejercicios 1,2,3 del libro ...",
+//     //                 "estado": "pendiente",
+//     //                 "fecha": new Date("2021-10-10")
+//     //             },
+//     //             {
+//     //                 "nombre": "Tarea de astronomía",
+//     //                 "descripcion": "Descripcion de la tarea 1",
+//     //                 "estado": "pendiente",
+//     //                 "fecha": new Date("2021-10-10")
+//     //             }
+//     //         ]
+//     //     },
+//     // ];
+//     return proyectos;
+// }
 
 export default Proyecto;
