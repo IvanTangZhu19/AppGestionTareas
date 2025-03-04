@@ -1,19 +1,35 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, NavLink } from 'react-router-dom';
 import "./Tareas.scss";
+import crearTarea from "./../../methods/crearTarea";
+import traerProyectos from '../../methods/traerProyectos';
 
 function Crear_Tarea() {
+    const [proyectosPendientes, setProyectosPendientes] = useState([]);
     const [formData, setFormData] = useState({
         titulo: '',
         descripcion: '',
         fecha: '',
-        proyecto: 'Predeterminado'
+        proyectoID: ''
     });
+    const navigate = useNavigate();
+    useEffect(() => {
+        const proyectos = traerProyectos();
+        setProyectosPendientes(proyectos.find(proyecto => proyecto.titulo === 'Proyectos Pendientes').proyectos);
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Lógica para guardar la tarea (usar localStorage o API)
-        console.log("Tarea creada:", formData);
+        crearTarea(
+            {
+                titulo: formData.titulo,
+                descripcion: formData.descripcion,
+                fecha: formData.fecha,
+                proyectoID: formData.proyectoID
+            }
+        )
+        navigate('/tareas');
+        
     };
 
     return (
@@ -30,7 +46,6 @@ function Crear_Tarea() {
                         required
                     />
                 </div>
-
                 <div className="campo-formulario">
                     <label>Fecha</label>
                     <input 
@@ -40,7 +55,6 @@ function Crear_Tarea() {
                         required
                     />
                 </div>
-
                 <div className="campo-formulario">
                     <label>Descripción</label>
                     <textarea 
@@ -49,15 +63,15 @@ function Crear_Tarea() {
                         required
                     />
                 </div>
-
                 <div className="campo-formulario">
                     <label>Proyecto</label>
                     <select 
-                        value={formData.proyecto}
-                        onChange={(e) => setFormData({...formData, proyecto: e.target.value})}
+                        value={formData.proyectoID}
+                        onChange={(e) => setFormData({...formData, proyectoID: e.target.value})}
                     >
-                        <option value="Predeterminado">Predeterminado</option>
-                        {/* Agregar más proyectos dinámicamente */}
+                    {proyectosPendientes.map((proyecto, index) => (
+                        <option key={index} value={proyecto.id}>{proyecto.titulo}</option>
+                    ))}
                     </select>
                 </div>
 

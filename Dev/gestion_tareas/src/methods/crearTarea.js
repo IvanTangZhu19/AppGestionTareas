@@ -1,7 +1,7 @@
 function crearTarea(data){
     const proyectos = JSON.parse(localStorage.getItem('proyectos'));
     const proyectoIndex = proyectos.findIndex(
-        proyecto => proyecto.id === data.id && proyecto.estado === 'activo');
+        proyecto => proyecto.id == data.proyectoID && proyecto.estado == 'activo');
     if(proyectoIndex != -1){
         proyectos[proyectoIndex].tareas.push(
             {
@@ -11,6 +11,7 @@ function crearTarea(data){
                 "estado": "activo"
             }
         );
+        localStorage.setItem('proyectos', JSON.stringify(proyectos));
     }
 }
 
