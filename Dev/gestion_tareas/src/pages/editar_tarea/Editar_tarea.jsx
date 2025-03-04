@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import './Tareas.scss';
+import './../crear_tarea/Crear_tarea.scss';
 
 function Editar_Tarea() {
     const { id } = useParams();

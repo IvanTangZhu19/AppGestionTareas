@@ -1,15 +1,5 @@
-// Estilos para formularios
-.contenedor-formulario {
-    h2 {
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    form{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-}
+$color_cancelar: #ff4444;
+$color_agregar: #779CAB;
 
 .campo-formulario {
     margin-bottom: 20px;
@@ -31,7 +21,7 @@
     }
 }
 
-.botones-accion {
+.botones-formulario {
     display: flex;
     justify-content: center;
     margin-top: 30px;
@@ -42,16 +32,16 @@
         position: none;
         padding: 10px 20px;
         font-size: 16px;
-        background-color: gray;
+        background-color: $color_agregar;
         border-radius: 20px;
     }
 
-    .boton-cancelar {
+    .cancelar {
         color: black;
         text-decoration: none;
         border-radius: 20px;
         padding: 10px 20px;
-        background-color: #ff4444;
+        background-color: $color_cancelar;
         margin-right: 20px;
     }
 }

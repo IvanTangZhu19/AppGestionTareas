@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import './Proyectos.scss';
+import './../crear_proyecto/Crear_proyecto.scss';
 
 function Editar_proyecto() {
     const { id } = useParams();

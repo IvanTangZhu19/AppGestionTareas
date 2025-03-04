@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import "./Tareas.scss";
+import "./Crear_Tarea.scss";
 import crearTarea from "./../../methods/crearTarea";
 import traerProyectos from '../../methods/traerProyectos';
 

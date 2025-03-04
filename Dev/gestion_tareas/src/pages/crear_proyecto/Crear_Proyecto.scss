@@ -1,0 +1,13 @@
+@use "./Form_Proyecto";
+
+.contenedor-formulario {
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    form{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

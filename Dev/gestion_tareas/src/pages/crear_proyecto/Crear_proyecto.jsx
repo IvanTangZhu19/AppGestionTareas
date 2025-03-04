@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import "./Proyectos.scss";
+import "./Crear_Proyecto.scss";
 import crearProyecto from "./../../methods/crearProyecto";
 
 function Crear_Proyecto() {
