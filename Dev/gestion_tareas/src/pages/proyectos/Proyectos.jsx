@@ -56,6 +56,7 @@ function traerProyectos(){
         {
             "titulo": "Predeterminado",
             "descripcion": "Proyecto ...",
+            "fecha": null,
             "tareas": [
                 {
                     "nombre": "Tarea de cálculo",

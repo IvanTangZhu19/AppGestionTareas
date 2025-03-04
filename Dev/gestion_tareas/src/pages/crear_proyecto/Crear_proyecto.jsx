@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import "./Proyectos.scss";
+import crearProyecto from "./../../methods/crearProyecto";
+
 function Crear_Proyecto() {
     const [formData, setFormData] = useState({
         titulo: '',
         descripcion: '',
         fecha: '',
     });
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Lógica para guardar el proyecto (usar localStorage o API)
-        console.log("Proyecto creado:", formData);
+        crearProyecto(formData);
+        navigate("/proyectos");
     };
     return (
         <div className="contenedor-formulario">
