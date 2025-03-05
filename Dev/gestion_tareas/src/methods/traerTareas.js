@@ -1,17 +1,27 @@
 function traerTareas(){
     const proyectos = JSON.parse(localStorage.getItem('proyectos'));
-    const proyectoPendientes = proyectos.filter(
-        proyecto => proyecto.estado === 'activo');
-    const proyectosCompletados = proyectos.filter(
-        proyecto => proyecto.estado === 'completado');
+    let tareasPendientes = [], tareasCompletadas = [];
+    if(proyectos){
+        const tareas = proyectos.reduce((tareas, proyecto) => {
+            return tareas.concat(proyecto.tareas);
+        }, []);
+    
+        tareasPendientes = tareas.filter(
+            tarea => tarea.estado === 'activo');
+        tareasCompletadas = tareas.filter(
+            tarea => tarea.estado === 'completado');
+        
+        tareasPendientes.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+        tareasCompletadas.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    }
     return [
         {
-            "titulo": "Proyectos Pendientes",
-            "proyectos": proyectoPendientes
+            "titulo": "Tareas Pendientes",
+            "tareas": tareasPendientes
         },
         {  
-            "titulo": "Proyectos completados",
-            "proyectos": proyectosCompletados
+            "titulo": "Tareas completadas",
+            "tareas": tareasCompletadas
         }
     ];
 }
