@@ -1,30 +1,33 @@
-function crearProyecto(data){
-    const proyectos = JSON.parse(localStorage.getItem('proyectos'));
-    if(!proyectos){
-        localStorage.setItem('proyectos', JSON.stringify(
-            [
-                {
-                    "id": 1,
-                    "titulo": "Predeterminado",
-                    "descripcion": "Proyecto predeterminado",
-                    "fecha": null,
-                    "tareas": [],
-                    "estado": "activo"
-                }
-            ]
-        ));
+function crearProyecto(data) {
+    let proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
+    
+    // Si no hay proyectos, crear el predeterminado
+    if (proyectos.length === 0) {
+        proyectos = [
+            {
+                "id": 1,
+                "titulo": "Predeterminado",
+                "descripcion": "Proyecto predeterminado",
+                "fecha": null,
+                "tareas": [],
+                "estado": "activo"
+            }
+        ];
+        localStorage.setItem('proyectos', JSON.stringify(proyectos));
     }
-    const id = proyectos.length +1;
-    const proyecto = {
+
+    const id = proyectos.length + 1;
+    const nuevoProyecto = {
         "id": id,
         "titulo": data.titulo,
         "descripcion": data.descripcion,
         "fecha": data.fecha,
         "tareas": [],
         "estado": "activo"
-    }
-    const proyectosConNuevo = [...proyectos, proyecto];
-    localStorage.setItem('proyectos', JSON.stringify(proyectosConNuevo));
+    };
+
+    const proyectosActualizados = [...proyectos, nuevoProyecto];
+    localStorage.setItem('proyectos', JSON.stringify(proyectosActualizados));
 }
 
 export default crearProyecto;

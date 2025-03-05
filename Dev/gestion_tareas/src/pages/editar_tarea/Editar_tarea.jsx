@@ -1,32 +1,54 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useNavigate } from 'react-router-dom'; // Añadir useNavigate
 import './../crear_tarea/Crear_tarea.scss';
+import editarTarea from '../../methods/editarTarea';
 
 function Editar_Tarea() {
-    const { id } = useParams();
-    const [formData, setFormData] = useState({
-        titulo: '',
-        fecha: '',
-        descripcion: '',
-        proyecto: 'Predeterminado'
-    });
+    const { proyectoId, tareaId } = useParams();
+    const navigate = useNavigate();
+    const [proyectos, setProyectos] = useState([]);
+    const [formData, setFormData] = useState({ titulo: '', fecha: '', descripcion: '', proyecto: '' });
+    const [cargando, setCargando] = useState(true);
+    const [error, setError] = useState('');
 
-    // Simular carga de datos de la tarea
     useEffect(() => {
-        const tareaEjemplo = {
-            titulo: "Tarea de cálculo",
-            descripcion: "Resolver ejercicios 1-3 del libro...",
-            fecha: "2023-10-10",
-            proyecto: "Predeterminado"
-        };
-        setFormData(tareaEjemplo);
-    }, [id]);
+        const proyectosData = JSON.parse(localStorage.getItem('proyectos')) || [];
+        const proyecto = proyectosData.find(p => p.id === Number(proyectoId)); // ID debe ser 2
+    
+        if (!proyecto) {
+            setError('Proyecto no encontrado');
+            setCargando(false);
+            return;
+        }
+    
+        const tarea = proyecto.tareas?.find(t => t.id === Number(tareaId));
+        
+        if (!tarea) {
+            setError('Tarea no encontrada');
+            setCargando(false);
+            return;
+        }
+
+        setFormData({
+            titulo: tarea.titulo,
+            descripcion: tarea.descripcion,
+            fecha: tarea.fecha?.split('T')[0] || '',
+            proyecto: proyecto.id.toString() // Asegurar que sea string para el select
+        });
+        
+        setCargando(false);
+    }, [proyectoId, tareaId]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Lógica para guardar cambios
-        console.log("Tarea actualizada:", formData);
+        if (editarTarea(proyectoId, tareaId, formData)) {
+            navigate('/tareas'); // Usar navigate en lugar de window.location
+        }
     };
+
+    // Mostrar estados de carga/error
+    if (cargando) return <div>Cargando...</div>;
+    if (error) return <div className="error-message">{error}</div>;
 
     return (
         <div className="contenedor-formulario">
@@ -65,12 +87,14 @@ function Editar_Tarea() {
                 <div className="campo-formulario">
                     <label>Proyecto</label>
                     <select
-                        value={formData.proyecto}
+                        value={formData.proyecto.toString()} // Forzar a string
                         onChange={(e) => setFormData({...formData, proyecto: e.target.value})}
                     >
-                        <option value="Predeterminado">Predeterminado</option>
-                        <option value="Matemáticas">Matemáticas</option>
-                        <option value="Ciencias">Ciencias</option>
+                        {proyectos.map((proyecto) => (
+                            <option key={proyecto.id} value={proyecto.id.toString()}> {/* Valor como string */}
+                                {proyecto.titulo}
+                            </option>
+                        ))}
                     </select>
                 </div>
 

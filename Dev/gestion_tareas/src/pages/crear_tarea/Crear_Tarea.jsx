@@ -13,9 +13,11 @@ function Crear_Tarea() {
         proyectoID: ''
     });
     const navigate = useNavigate();
+    
     useEffect(() => {
-        const proyectos = traerProyectos();
-        setProyectosPendientes(proyectos.find(proyecto => proyecto.titulo === 'Proyectos Pendientes').proyectos);
+        const proyectosData = traerProyectos();
+        const categoriaPendientes = proyectosData.find(c => c.titulo === "Proyectos Pendientes");
+        setProyectosPendientes(categoriaPendientes?.proyectos || []);
     }, []);
 
     const handleSubmit = (e) => {

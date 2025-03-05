@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import './../crear_proyecto/Crear_proyecto.scss';
+import editarProyecto from '../../methods/editarProyecto'; // Importar método
 
 function Editar_proyecto() {
     const { id } = useParams();
@@ -10,20 +11,24 @@ function Editar_proyecto() {
         descripcion: '',
     });
 
-    // Simular carga de datos de la tarea
+    // Cargar datos reales del proyecto
     useEffect(() => {
-        const proyectoEjemplo = {
-            titulo: "Predeterminado",
-            descripcion: "Proyecto ...",
-            fecha: "2023-10-10",           
-        };
-        setFormData(proyectoEjemplo);
+        const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
+        const proyecto = proyectos.find(p => p.id === parseInt(id));
+        if (proyecto) {
+            setFormData({
+                titulo: proyecto.titulo,
+                descripcion: proyecto.descripcion,
+                fecha: proyecto.fecha?.split('T')[0] || '' // Formatear fecha para input
+            });
+        }
     }, [id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Lógica para guardar cambios
-        console.log("Proyecto actualizado:", formData);
+        if (editarProyecto(id, formData)) { // Usar el método de edición
+            window.location.href = "/proyectos"; // Redirigir
+        }
     };
     return (
         <div className="contenedor-formulario">

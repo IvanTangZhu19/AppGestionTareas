@@ -1,5 +1,5 @@
 function traerTareas(){
-    const proyectos = JSON.parse(localStorage.getItem('proyectos'));
+    const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
     const proyectoPendientes = proyectos.filter(
         proyecto => proyecto.estado === 'activo');
     const proyectosCompletados = proyectos.filter(
