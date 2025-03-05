@@ -2,24 +2,28 @@ import "./Menu.scss";
 import React from 'react';
 //import { Link } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
+import iconoTarea from "./../../assets/task.svg";
+import iconoProyectos from "./../../assets/tasks.svg";
+import iconoHome from "./../../assets/home.svg";
+
 function Menu() {
     return (
         <div className="menu">
-            <h2>
+            <div>
                 <NavLink className={({ isActive }) => isActive ? "enlace activo" : "enlace"} 
-                    to="/">Inicio
+                    to="/"><img src={iconoHome} alt="" />
                 </NavLink>
-            </h2>
-            <h2>
+            </div>
+            <div>
                 <NavLink className={({ isActive }) => isActive ? "enlace activo" : "enlace"} 
-                    to="/tareas">Tareas
+                    to="/tareas"><img src={iconoTarea} alt="" />
                 </NavLink>
-            </h2>
-            <h2>
+            </div>
+            <div>
                 <NavLink className={({ isActive }) => isActive ? "enlace activo" : "enlace"} 
-                    to="/proyectos">Proyectos
+                    to="/proyectos"><img className="proyecto" src={iconoProyectos} alt="" />
                 </NavLink>
-            </h2>
+            </div>
         </div>
     );
 }

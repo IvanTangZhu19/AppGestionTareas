@@ -28,7 +28,7 @@ function Tarea() {
                                 <NavLink to={`/tareas/editar/${index}`} className="enlace_editar">Editar</NavLink>
                             </button>
                             <button className="eliminar">Eliminar</button>
-                            <button className="completar">Completar</button>
+                            <button className="completar">✓</button>
                         </div>
                     </div>
                 ))}
