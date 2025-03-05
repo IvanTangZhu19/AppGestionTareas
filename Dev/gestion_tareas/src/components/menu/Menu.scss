@@ -8,19 +8,18 @@ $color_activo_fuente : black;
     justify-content: space-around;
     align-items: center;
     bottom: 0;
-    padding: 10px;
     width: 364px;
+    height: 80px;
     background-color: $color_fondo;
     color: $color_fuente;
     position: fixed;
     div{
+        display: flex;
+        justify-content: center;   
+        align-items: center;
         img{
             margin: 0;
             width: 55px;
-            height: 50px;
-        }
-        .proyecto{
-            width: 100px;
         }
     }
 }
@@ -28,7 +27,7 @@ $color_activo_fuente : black;
 .enlace{
     text-decoration: none;
     color: $color_fuente;
-    padding: 8px;
+    padding: 5px;
     border-radius: 20px;
 }
 
