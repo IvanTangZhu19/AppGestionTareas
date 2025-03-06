@@ -51,7 +51,12 @@ function Proyecto() {
                                     <p>Descripción: {proyecto.descripcion}</p>
                                     <div>
                                         {proyecto.tareas.map((tarea) => (
-                                            <li key={tarea.id}>{tarea.titulo} {tarea.fecha}</li>
+                                            <li key={tarea.id}>
+                                                {tarea.titulo} {tarea.fecha} 
+                                                {tarea.estado == "completado" &&
+                                                    <span>✓</span>
+                                                }
+                                            </li>
                                         ))}
                                     </div>
                                 </div>

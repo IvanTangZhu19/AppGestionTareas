@@ -9,18 +9,6 @@ function Tarea() {
     const [tareas, setTareas] = useState([]);
     const navigate = useNavigate();
 
-    // Obtener tareas reales desde los proyectos
-    // function cargarTareas() {
-    //     const proyectos = traerProyectos().find(p => p.titulo === "Proyectos Pendientes")?.proyectos || [];
-    //     return proyectos.flatMap(proyecto => 
-    //         proyecto.tareas.map(tarea => ({
-    //             ...tarea,
-    //             proyectoId: proyecto.id,
-    //             fecha: tarea.fecha ? new Date(tarea.fecha) : new Date()
-    //         }))
-    //     );
-    // }
-
     useEffect(() => {
         setTareas(traerTareas());
     }, []);
