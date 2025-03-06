@@ -1,11 +1,13 @@
 import "./Home.scss";
 import React, { useState, useEffect } from 'react';
+import traerTareas from "../../methods/traerTareas";
 
 function Home() {
     const [tareas, setTareas] = useState([]);
 
     useEffect(() => {
-        setTareas(traerTareas());
+        const tareas = traerTareas();
+        setTareas(tareas[0].tareas);
     }, []);
     
     return (
@@ -16,31 +18,13 @@ function Home() {
             <div className="tareasInicio">
                 {tareas.map((tarea, index) => (
                     <div key={index} className="contenedor_tarea">
-                        <p>{tarea.nombre}</p>
-                        <p>{tarea.fecha.toDateString()}</p>
+                        <p>{tarea.titulo}</p>
+                        <p>{tarea.fecha}</p>
                     </div>
                 ))}
             </div>
         </div>
     );
-}
-
-function traerTareas(){
-    const tareas = [
-        {
-            "nombre": "Tarea de cálculo",
-            "descripcion": "Descripcion de la tarea 1",
-            "estado": "pendiente",
-            "fecha": new Date("2021-10-10")
-        },
-        {
-            "nombre": "Tarea de astronomía",
-            "descripcion": "Descripcion de la tarea 1",
-            "estado": "pendiente",
-            "fecha": new Date("2021-10-10")
-        }
-    ];
-    return tareas;
 }
 
 export default Home;
