@@ -9,36 +9,33 @@ function Tarea() {
     const [tareas, setTareas] = useState([]);
     const navigate = useNavigate();
 
-    // Obtener tareas reales de localStorage
-    function traerTareas() {
-        const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
-        const proyectosActivos = proyectos.filter(p => p.estado === 'activo');
-        
-        return proyectosActivos.flatMap(proyecto => 
-            proyecto.tareas?.map(tarea => ({
+    // Obtener tareas reales desde los proyectos
+    function cargarTareas() {
+        const proyectos = traerProyectos().find(p => p.titulo === "Proyectos Pendientes")?.proyectos || [];
+        return proyectos.flatMap(proyecto => 
+            proyecto.tareas.map(tarea => ({
                 ...tarea,
                 proyectoId: proyecto.id,
                 fecha: tarea.fecha ? new Date(tarea.fecha) : new Date()
-            })) || []
+            }))
         );
     }
 
-    // Actualizar tareas al cargar y después de acciones
     useEffect(() => {
-        setTareas(traerTareas());
+        setTareas(cargarTareas());
     }, []);
 
     // Manejar eliminación
     const handleEliminar = (proyectoId, tareaId) => {
         if (eliminarTarea(proyectoId, tareaId)) {
-            setTareas(traerTareas());
+            setTimeout(() => setTareas(cargarTareas()), 100); // Esperar a que localStorage se actualice
         }
     };
 
     // Manejar completado
     const handleCompletar = (proyectoId, tareaId) => {
         if (completarTarea(proyectoId, tareaId)) {
-            setTareas(traerTareas());
+            setTimeout(() => setTareas(cargarTareas()), 100);
         }
     };
 
@@ -60,12 +57,12 @@ function Tarea() {
                         </div>
                         <div className="botones">
                             <button className="editar">
-                            <NavLink 
-                                to={`/tareas/editar/${tarea.proyectoId}/${tarea.id}`} // proyectoId debe ser 2
-                                className="enlace_editar"
-                            >
-                                Editar
-                            </NavLink>
+                                <NavLink 
+                                    to={`/tareas/editar/${tarea.proyectoId}/${tarea.id}`}
+                                    className="enlace_editar"
+                                >
+                                    Editar
+                                </NavLink>
                             </button>
                             <button 
                                 className="eliminar" 

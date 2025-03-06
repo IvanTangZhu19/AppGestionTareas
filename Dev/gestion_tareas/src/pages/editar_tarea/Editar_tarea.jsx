@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams, useNavigate } from 'react-router-dom'; // Añadir useNavigate
+import { NavLink, useParams, useNavigate } from 'react-router-dom';
 import './../crear_tarea/Crear_tarea.scss';
 import editarTarea from '../../methods/editarTarea';
 
@@ -13,40 +13,55 @@ function Editar_Tarea() {
 
     useEffect(() => {
         const proyectosData = JSON.parse(localStorage.getItem('proyectos')) || [];
-        const proyecto = proyectosData.find(p => p.id === Number(proyectoId)); // ID debe ser 2
-    
-        if (!proyecto) {
-            setError('Proyecto no encontrado');
-            setCargando(false);
-            return;
-        }
-    
-        const tarea = proyecto.tareas?.find(t => t.id === Number(tareaId));
-        
-        if (!tarea) {
-            setError('Tarea no encontrada');
-            setCargando(false);
-            return;
-        }
+        setProyectos(proyectosData);
+    }, []);
 
-        setFormData({
-            titulo: tarea.titulo,
-            descripcion: tarea.descripcion,
-            fecha: tarea.fecha?.split('T')[0] || '',
-            proyecto: proyecto.id.toString() // Asegurar que sea string para el select
-        });
-        
+    useEffect(() => {
+    console.log("Lista de proyectos cargada:", proyectos);
+    console.log("Buscando proyecto con ID:", proyectoId);
+
+    if (proyectos.length === 0) return;
+
+    const proyecto = proyectos.find(p => p.id === Number(proyectoId));
+    console.log("Proyecto encontrado:", proyecto);
+
+    if (!proyecto) {
+        setError('Proyecto no encontrado');
         setCargando(false);
-    }, [proyectoId, tareaId]);
+        return;
+    }
+
+    console.log("Buscando tarea con ID:", tareaId);
+    const tarea = proyecto.tareas?.find(t => t.id === Number(tareaId));
+    console.log("Tarea encontrada:", tarea);
+
+    if (!tarea) {
+        setError('Tarea no encontrada');
+        setCargando(false);
+        return;
+    }
+
+    setFormData({
+        titulo: tarea.titulo,
+        descripcion: tarea.descripcion,
+        fecha: tarea.fecha?.split('T')[0] || '',
+        proyecto: proyecto.id.toString()
+    });
+
+    setCargando(false);
+}, [proyectos, proyectoId, tareaId]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (editarTarea(proyectoId, tareaId, formData)) {
-            navigate('/tareas'); // Usar navigate en lugar de window.location
+        const exito = editarTarea(proyectoId, tareaId, formData);
+        if (exito) {
+            setTimeout(() => navigate('/tareas'), 100);
+        } else {
+            setError("Error al guardar la tarea. Verifica los datos.");
         }
     };
 
-    // Mostrar estados de carga/error
     if (cargando) return <div>Cargando...</div>;
     if (error) return <div className="error-message">{error}</div>;
 
@@ -56,7 +71,6 @@ function Editar_Tarea() {
             <header className="header-edicion">
                 <h2>Editar tarea</h2>
             </header>
-
             <form onSubmit={handleSubmit} className="formulario-edicion">
                 <div className="campo-formulario">
                     <label>Título</label>
@@ -66,7 +80,6 @@ function Editar_Tarea() {
                         onChange={(e) => setFormData({...formData, titulo: e.target.value})}
                     />
                 </div>
-
                 <div className="campo-formulario">
                     <label>Fecha</label>
                     <input
@@ -75,7 +88,6 @@ function Editar_Tarea() {
                         onChange={(e) => setFormData({...formData, fecha: e.target.value})}
                     />
                 </div>
-
                 <div className="campo-formulario">
                     <label>Descripción</label>
                     <textarea
@@ -83,21 +95,19 @@ function Editar_Tarea() {
                         onChange={(e) => setFormData({...formData, descripcion: e.target.value})}
                     />
                 </div>
-
                 <div className="campo-formulario">
                     <label>Proyecto</label>
                     <select
-                        value={formData.proyecto.toString()} // Forzar a string
+                        value={formData.proyecto.toString()}
                         onChange={(e) => setFormData({...formData, proyecto: e.target.value})}
                     >
                         {proyectos.map((proyecto) => (
-                            <option key={proyecto.id} value={proyecto.id.toString()}> {/* Valor como string */}
+                            <option key={proyecto.id} value={proyecto.id.toString()}>
                                 {proyecto.titulo}
                             </option>
                         ))}
                     </select>
                 </div>
-
                 <div className="botones-accion">
                     <NavLink to="/tareas" className="boton-cancelar">Cancelar</NavLink>
                     <button type="submit" className="boton-guardar">Guardar cambios</button>
