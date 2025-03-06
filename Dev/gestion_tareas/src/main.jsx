@@ -23,7 +23,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/proyectos" element={<Proyectos />} />
           <Route path="/tareas/crear" element={<Crear_Tarea />} />
           <Route path="/proyectos/crear" element={<Crear_Proyecto />} />
-          <Route path="/tareas/editar/:id" element={<Editar_Tarea />} />
+          <Route path="/tareas/editar/:proyectoId/:tareaId" element={<Editar_Tarea />} />
           <Route path="/proyectos/editar/:id" element={<Editar_Proyecto />} />
         </Routes>
         <Menu/>
