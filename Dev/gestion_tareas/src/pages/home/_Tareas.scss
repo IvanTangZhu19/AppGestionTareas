@@ -3,6 +3,10 @@ $color_fondo: #627C85;
 .tareasInicio{
     display: flex;
     flex-direction: row;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+    position: relative;
+    scroll-behavior: smooth;
 }
 
 .contenedor_tarea{
@@ -17,4 +21,19 @@ $color_fondo: #627C85;
     p{
         margin: 5px;
     }
+    .boton-navegacion{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .boton-navegacion.izquierda {
+        left: 0;
+    }
+    .boton-navegacion.derecha{
+        right: 0;
+    }
+
 }
