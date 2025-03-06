@@ -4,4 +4,26 @@
     .contenedor_proyecto{
         margin-left: 20px;
     }
+    .contenedor_progreso{
+        width: 80%;
+        height: 25px;
+        background-color: #e0e0e0;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        .barra_progreso{
+            height: 100%;
+            background-color: #4caf50;
+            transition: width 0.4s ease-in-out;
+        }
+        span{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+        }
+    }
 }
