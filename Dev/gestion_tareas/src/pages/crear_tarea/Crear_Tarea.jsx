@@ -16,8 +16,15 @@ function Crear_Tarea() {
     
     useEffect(() => {
         const proyectosData = traerProyectos();
-        const categoriaPendientes = proyectosData.find(c => c.titulo === "Proyectos Pendientes");
-        setProyectosPendientes(categoriaPendientes?.proyectos || []);
+        //const categoriaPendientes = proyectosData.find(c => c.titulo === "Proyectos Pendientes");
+        //setProyectosPendientes(categoriaPendientes?.proyectos || []);
+        setProyectosPendientes(proyectosData[0].proyectos);
+        if(proyectosData[0].proyectos.length > 0){
+            setFormData(formData => ({
+                ...formData,
+                proyectoID: proyectosData[0].proyectos[0].id
+            }))
+        }
     }, []);
 
     const handleSubmit = (e) => {

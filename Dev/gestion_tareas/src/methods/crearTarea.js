@@ -3,14 +3,13 @@ function crearTarea(data) {
     let ultimoTareaID = parseInt(localStorage.getItem('tareaID')) || 0;
 
     // Buscar proyecto activo por ID
-    const proyecto = proyectos.find(p => 
-        p.id === parseInt(data.proyectoID) && 
+    const proyectoIndex = proyectos.findIndex(p => 
+        p.id == parseInt(data.proyectoID) && 
         p.estado === "activo"
     );
 
-    if (!proyecto) return false;
+    //if (!proyecto) return false;
 
-    // Crear nueva tarea
     const nuevaTarea = {
         id: ultimoTareaID + 1,
         titulo: data.titulo,
@@ -18,8 +17,9 @@ function crearTarea(data) {
         fecha: data.fecha,
         estado: "activo"
     };
+    proyectos[proyectoIndex].tareas.push(nuevaTarea);
 
-    proyecto.tareas.push(nuevaTarea);
+    //proyecto.tareas.push(nuevaTarea);
     localStorage.setItem('tareaID', ultimoTareaID + 1);
     localStorage.setItem('proyectos', JSON.stringify(proyectos));
 
