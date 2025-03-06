@@ -3,7 +3,11 @@ function traerTareas(){
     let tareasPendientes = [], tareasCompletadas = [];
     if(proyectos){
         const tareas = proyectos.reduce((tareas, proyecto) => {
-            return tareas.concat(proyecto.tareas);
+            const tareasConProyectoID = proyecto.tareas.map(tarea => ({
+                ...tarea,
+                proyectoID: proyecto.id
+            }))
+            return tareas.concat(tareasConProyectoID);
         }, []);
     
         tareasPendientes = tareas.filter(

@@ -71,7 +71,6 @@ function Proyecto() {
                                     >
                                         Eliminar
                                     </button>
-                                    {/* Botón para completar */}
                                     <button 
                                         className="completar"
                                         onClick={() => handleCompletar(proyecto.id)}
