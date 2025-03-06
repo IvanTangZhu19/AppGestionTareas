@@ -1,39 +1,47 @@
 $color_fondo: #627C85;
+$duracion: 250ms;
 
 .tareasInicio{
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
-    overflow-x: hidden;
     position: relative;
     scroll-behavior: smooth;
-}
-
-.contenedor_tarea{
-    width: 100px;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-left: 20px;
-    background-color: $color_fondo;
-    padding: 5px;
-    border-radius: 20px;
-    p{
-        margin: 5px;
+    .seccion{
+        margin-left: 20px;
+        display: flex;
+        overflow-x: hidden;
+        transition: all $duracion;
+        .contenedor_tarea{
+            flex: 0 0 150px;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-left: 10px;
+            background-color: $color_fondo;
+            padding: 5px;
+            border-radius: 20px;
+            p{
+                margin: 5px;
+            }
+        }
     }
     .boton-navegacion{
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
         border: none;
+        padding: 10px;
         cursor: pointer;
         z-index: 1;
     }
     .boton-navegacion.izquierda {
         left: 0;
     }
-    .boton-navegacion.derecha{
+
+    .boton-navegacion.derecha {
         right: 0;
     }
-
 }
