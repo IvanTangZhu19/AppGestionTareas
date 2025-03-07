@@ -77,12 +77,14 @@ function Proyecto() {
                                         >
                                             Eliminar
                                         </button>
-                                        <button 
-                                            className="completar"
-                                            onClick={() => handleCompletar(proyecto.id)}
-                                        >
-                                            ✓
-                                        </button>
+                                        {proyecto.estado != "completado" &&
+                                            <button 
+                                                className="completar"
+                                                onClick={() => handleCompletar(proyecto.id)}
+                                            >
+                                                ✓
+                                            </button>
+                                        }
                                     </div>
                                 }
                             </section>

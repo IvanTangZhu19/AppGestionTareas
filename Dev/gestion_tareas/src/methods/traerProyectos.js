@@ -8,8 +8,8 @@ function traerProyectos() {
         estado: proyecto.estado || "activo"
     }));
 
-    const pendientes = proyectosFormateados.filter(p => p.estado === "activo");
-    const completados = proyectosFormateados.filter(p => p.estado === "completado");
+    const pendientes = proyectosFormateados.filter(p => p.estado == "activo");
+    const completados = proyectosFormateados.filter(p => p.estado == "completado");
 
     return [
         { titulo: "Proyectos Pendientes", proyectos: pendientes },

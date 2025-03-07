@@ -11,9 +11,9 @@ function traerTareas(){
         }, []);
     
         tareasPendientes = tareas.filter(
-            tarea => tarea.estado === 'activo');
+            tarea => tarea.estado == "activo");
         tareasCompletadas = tareas.filter(
-            tarea => tarea.estado === 'completado');
+            tarea => tarea.estado == "completado");
         
         tareasPendientes.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
         tareasCompletadas.sort((a, b) => new Date(a.fecha) - new Date(b.fecha));

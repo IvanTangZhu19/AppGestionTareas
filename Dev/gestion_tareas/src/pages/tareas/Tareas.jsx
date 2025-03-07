@@ -15,8 +15,11 @@ function Tarea() {
 
     // Manejar eliminación
     const handleEliminar = (proyectoId, tareaId) => {
-        if (eliminarTarea(proyectoId, tareaId)) {
-            setTimeout(() => setTareas(traerTareas()), 100); // Esperar a que localStorage se actualice
+        const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
+        if(confirmacion){
+            if (eliminarTarea(proyectoId, tareaId)) {
+                setTimeout(() => setTareas(traerTareas()), 100);
+            }
         }
     };
 
