@@ -3,13 +3,15 @@ $color_boton: black;
 
 .boton_agregar{
     background-color: $color_agregar;
-    position: fixed;
+    position: fixed !important;
     padding: 10px;
-    bottom: 120px;
-    left: 320px;
+    top: 400px;
+    left: 300px;
     border-radius: 30px;
     font-size: 40px;
     border: none;
+    z-index: 1000;
+    will-change: transform, opacity;
     .enlace{
         text-decoration: none;
         color: $color_boton;
