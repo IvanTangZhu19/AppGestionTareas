@@ -1,11 +1,14 @@
 $color_cancelar: #ff4444;
 $color_agregar: #779CAB;
+$font: 'WorkSans';
+
 .botones-accion {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 
     button {
+        font-family: $font;
         cursor: pointer;
         border: none;
         position: none;

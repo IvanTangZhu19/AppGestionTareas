@@ -13,9 +13,13 @@
     }
 
     input, textarea, select {
+        font-family: 'WorkSans';
         width: 200px;
         padding: 2px;
         border: 1px solid #ccc;
         border-radius: 4px;
+    }
+    textarea{
+        resize: none;
     }
 }

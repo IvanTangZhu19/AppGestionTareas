@@ -1,5 +1,19 @@
+@font-face {
+  font-family: 'WorkSans';
+  src: url('./fonts/WorkSans-VariableFont_wght.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'WorkSans';
+  src: url('./fonts/WorkSans-Bold.ttf') format('woff2');
+  font-weight: bold;
+  font-style: bold;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'WorkSans', Courier;
   line-height: 1.5;
   font-weight: 400;
 
