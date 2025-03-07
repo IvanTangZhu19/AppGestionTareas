@@ -54,6 +54,13 @@ function Editar_Tarea() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const hoy = new Date();
+        const fecha = new Date(formData.fecha);
+
+        if(fecha <= hoy){
+            setError("La fecha debe ser mayor al día de hoy");
+            return;
+        }
         const exito = editarTarea(proyectoId, tareaId, formData);
         if (exito) {
             setTimeout(() => navigate('/tareas'), 100);
@@ -63,7 +70,7 @@ function Editar_Tarea() {
     };
 
     if (cargando) return <div>Cargando...</div>;
-    if (error) return <div className="error-message">{error}</div>;
+    //if (error) return <div className="error-message">{error}</div>;
 
     return (
         <div className="contenedor-formulario">
@@ -108,6 +115,9 @@ function Editar_Tarea() {
                         ))}
                     </select>
                 </div>
+                {error.length > 0 && 
+                    <p>{error}</p>
+                }
                 <div className="botones-accion">
                     <NavLink to="/tareas" className="boton-cancelar">Cancelar</NavLink>
                     <button type="submit" className="boton-guardar">Guardar cambios</button>

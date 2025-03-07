@@ -12,6 +12,7 @@ function Crear_Tarea() {
         fecha: '',
         proyectoID: ''
     });
+    const [error, setError] = useState([]);
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -29,6 +30,13 @@ function Crear_Tarea() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const hoy = new Date();
+        const fecha = new Date(formData.fecha);
+
+        if(fecha <= hoy){
+            setError("La fecha debe ser mayor al día de hoy");
+            return;
+        }
         crearTarea(
             {
                 titulo: formData.titulo,
@@ -83,7 +91,9 @@ function Crear_Tarea() {
                     ))}
                     </select>
                 </div>
-
+                {error.length > 0 && 
+                    <p>{error}</p>
+                }
                 <div className="botones-formulario">
                     <NavLink to="/tareas" className="cancelar">Cancelar</NavLink>
                     <button type="submit">Crear</button>

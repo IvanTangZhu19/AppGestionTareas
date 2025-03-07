@@ -10,6 +10,7 @@ function Editar_proyecto() {
         fecha: '',
         descripcion: '',
     });
+    const [error, setError] = useState([]);
 
     // Cargar datos reales del proyecto
     useEffect(() => {
@@ -26,6 +27,13 @@ function Editar_proyecto() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const hoy = new Date();
+        const fecha = new Date(formData.fecha);
+
+        if(fecha <= hoy){
+            setError("La fecha debe ser mayor al día de hoy");
+            return;
+        }
         if (editarProyecto(id, formData)) { // Usar el método de edición
             window.location.href = "/proyectos"; // Redirigir
         }
@@ -63,7 +71,9 @@ function Editar_proyecto() {
                         onChange={(e) => setFormData({...formData, descripcion: e.target.value})}
                     />
                 </div>
-
+                {error.length > 0 && 
+                    <p>{error}</p>
+                }
                 <div className="botones-accion">
                     <NavLink to="/proyectos" className="boton-cancelar">Cancelar</NavLink>
                     <button type="submit" className="boton-guardar">Guardar cambios</button>

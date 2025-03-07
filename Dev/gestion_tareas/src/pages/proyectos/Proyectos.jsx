@@ -60,29 +60,31 @@ function Proyecto() {
                                         ))}
                                     </div>
                                 </div>
-                                <div className="botones_proyectos">
-                                    <button className="editar">
-                                        {/* Enlace con ID real */}
-                                        <NavLink 
-                                            to={`/proyectos/editar/${proyecto.id}`} 
-                                            className="enlace_editar"
+                                {proyecto.id != 1 && 
+                                    <div className="botones_proyectos">
+                                        <button className="editar">
+                                            {/* Enlace con ID real */}
+                                            <NavLink 
+                                                to={`/proyectos/editar/${proyecto.id}`} 
+                                                className="enlace_editar"
+                                            >
+                                                Editar
+                                            </NavLink>
+                                        </button>
+                                        <button 
+                                            className="eliminar" 
+                                            onClick={() => handleEliminar(proyecto.id)}
                                         >
-                                            Editar
-                                        </NavLink>
-                                    </button>
-                                    <button 
-                                        className="eliminar" 
-                                        onClick={() => handleEliminar(proyecto.id)}
-                                    >
-                                        Eliminar
-                                    </button>
-                                    <button 
-                                        className="completar"
-                                        onClick={() => handleCompletar(proyecto.id)}
-                                    >
-                                        ✓
-                                    </button>
-                                </div>
+                                            Eliminar
+                                        </button>
+                                        <button 
+                                            className="completar"
+                                            onClick={() => handleCompletar(proyecto.id)}
+                                        >
+                                            ✓
+                                        </button>
+                                    </div>
+                                }
                             </section>
                         ))}
                     </div>

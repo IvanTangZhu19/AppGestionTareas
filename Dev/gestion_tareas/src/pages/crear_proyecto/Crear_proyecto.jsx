@@ -9,11 +9,19 @@ function Crear_Proyecto() {
         descripcion: '',
         fecha: '',
     });
+    const [error, setError] = useState([]);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Lógica para guardar el proyecto (usar localStorage o API)
+        const hoy = new Date();
+        const fecha = new Date(formData.fecha);
+
+        if(fecha <= hoy){
+            setError("La fecha debe ser mayor al día de hoy");
+            return;
+        }
+
         crearProyecto(formData);
         navigate("/proyectos");
     };
@@ -50,7 +58,9 @@ function Crear_Proyecto() {
                         required
                     />
                 </div>
-
+                {error.length > 0 && 
+                    <p>{error}</p>
+                }
                 <div className="botones-formulario">
                     <NavLink to="/proyectos" className="cancelar">Cancelar</NavLink>
                     <button type="submit">Crear</button>
