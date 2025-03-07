@@ -1,5 +1,4 @@
-$color_cancelar: #ff4444;
-$color_agregar: #779CAB;
+@use "./Botones";
 
 .campo-formulario {
     margin-bottom: 20px;
@@ -18,30 +17,5 @@ $color_agregar: #779CAB;
         padding: 2px;
         border: 1px solid #ccc;
         border-radius: 4px;
-    }
-}
-
-.botones-formulario {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-
-    button {
-        cursor: pointer;
-        border: none;
-        position: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: $color_agregar;
-        border-radius: 20px;
-    }
-
-    .cancelar {
-        color: black;
-        text-decoration: none;
-        border-radius: 20px;
-        padding: 10px 20px;
-        background-color: $color_cancelar;
-        margin-right: 20px;
     }
 }

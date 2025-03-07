@@ -1,5 +1,5 @@
 $color_fondo_contenedores: #627C85;
-$color_botones: #779CAB;
+@use "./Botones";
 
 .tareas{
     display: flex;
@@ -24,37 +24,5 @@ $color_botones: #779CAB;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    }
-}
-
-.botones{
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-    margin-top: 0;
-    button{
-        cursor: pointer;
-        padding: 10px;
-        font-size: 16px;
-        background-color: $color_botones;
-        margin-right: 0;
-        box-shadow: none;
-        border: 1px solid black;
-    }
-    .editar{
-        //background-color: yellow;
-        text-decoration: none;
-        border-bottom-left-radius: 15px;
-        .enlace_editar{
-            text-decoration: none;
-            color: black;
-        }
-    }
-    //.eliminar{
-        //background-color: red;
-    //}
-    .completar{
-        //background-color: green;
-        border-bottom-right-radius: 15px;
     }
 }
