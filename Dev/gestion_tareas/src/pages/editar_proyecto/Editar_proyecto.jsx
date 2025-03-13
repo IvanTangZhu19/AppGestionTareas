@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useNavigate } from 'react-router-dom';
 import './../crear_proyecto/Crear_proyecto.scss';
 import editarProyecto from '../../methods/editarProyecto'; // Importar método
 
@@ -11,6 +11,7 @@ function Editar_proyecto() {
         descripcion: '',
     });
     const [error, setError] = useState([]);
+    const navigate = useNavigate();
 
     // Cargar datos reales del proyecto
     useEffect(() => {
@@ -35,7 +36,7 @@ function Editar_proyecto() {
             return;
         }
         if (editarProyecto(id, formData)) { // Usar el método de edición
-            window.location.href = "/proyectos"; // Redirigir
+            navigate('/proyectos');
         }
     };
     return (

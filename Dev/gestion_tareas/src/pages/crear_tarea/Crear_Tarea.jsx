@@ -25,7 +25,10 @@ function Crear_Tarea() {
                 ...formData,
                 proyectoID: proyectosData[0].proyectos[0].id
             }))
+        } else {
+            setError("No tienes proyectos pendientes, primero crea tu proyecto");
         }
+
     }, []);
 
     const handleSubmit = (e) => {
@@ -37,15 +40,19 @@ function Crear_Tarea() {
             setError("La fecha debe ser mayor al día de hoy");
             return;
         }
-        crearTarea(
-            {
-                titulo: formData.titulo,
-                descripcion: formData.descripcion,
-                fecha: formData.fecha,
-                proyectoID: formData.proyectoID
-            }
-        )
-        navigate('/tareas');
+        if(proyectosPendientes.length > 0){
+            crearTarea(
+                {
+                    titulo: formData.titulo,
+                    descripcion: formData.descripcion,
+                    fecha: formData.fecha,
+                    proyectoID: formData.proyectoID
+                }
+            )
+            navigate('/tareas');
+        } else {
+            setError("No tienes proyectos pendientes, primero crea tu proyecto")
+        }
         
     };
 

@@ -42,7 +42,7 @@ function Proyecto() {
                         <p className="subtitulo">{proyectoCompletos.titulo}</p>
                         {proyectoCompletos.titulo == "Proyectos Pendientes" &&
                             <button className="boton_agregar">
-                                <NavLink className="enlace" to="/tareas/crear">+</NavLink>
+                                <NavLink className="enlace" to="/proyectos/crear">+</NavLink>
                             </button>
                         }
                     </div>
@@ -70,33 +70,31 @@ function Proyecto() {
                                         ))}
                                     </div>
                                 </div>
-                                {proyecto.id != 1 &&
-                                    <div className="botones_proyectos">
-                                        <button className="editar">
-                                            {/* Enlace con ID real */}
-                                            <NavLink
-                                                to={`/proyectos/editar/${proyecto.id}`}
-                                                className="enlace_editar"
-                                            >
-                                                <img src={iconoEdit} alt="" />
-                                            </NavLink>
-                                        </button>
-                                        <button
-                                            className="eliminar"
-                                            onClick={() => handleEliminar(proyecto.id)}
+                                <div className="botones_proyectos">
+                                    <button className="editar">
+                                        {/* Enlace con ID real */}
+                                        <NavLink
+                                            to={`/proyectos/editar/${proyecto.id}`}
+                                            className="enlace_editar"
                                         >
-                                            <img src={iconoDelete} alt="" />
+                                            <img src={iconoEdit} alt="" />
+                                        </NavLink>
+                                    </button>
+                                    <button
+                                        className="eliminar"
+                                        onClick={() => handleEliminar(proyecto.id)}
+                                    >
+                                        <img src={iconoDelete} alt="" />
+                                    </button>
+                                    {proyecto.estado != "completado" &&
+                                        <button
+                                            className="completar"
+                                            onClick={() => handleCompletar(proyecto.id)}
+                                        >
+                                            ✓
                                         </button>
-                                        {proyecto.estado != "completado" &&
-                                            <button
-                                                className="completar"
-                                                onClick={() => handleCompletar(proyecto.id)}
-                                            >
-                                                ✓
-                                            </button>
-                                        }
-                                    </div>
-                                }
+                                    }
+                                </div>
                             </section>
                         ))}
                     </div>

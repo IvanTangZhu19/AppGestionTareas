@@ -3,12 +3,12 @@ $color_fuente : white;
 $color_activo : #74bba8;
 $color_activo_fuente : black;
 .menu{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     bottom: 0;
-    width: 364px;
     height: 80px;
     background-color: $color_fondo;
     color: $color_fuente;

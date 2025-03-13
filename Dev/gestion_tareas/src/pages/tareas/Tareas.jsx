@@ -10,7 +10,7 @@ import iconoDelete from "./../../assets/delete.svg"
 function Tarea() {
     const [tareas, setTareas] = useState([]);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
         setTareas(traerTareas());
     }, []);

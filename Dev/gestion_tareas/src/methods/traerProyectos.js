@@ -1,6 +1,12 @@
 function traerProyectos() {
     const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
     
+    if(!proyectos){
+        return [
+            { titulo: "Proyectos Pendientes", proyectos: [] },
+            { titulo: "Proyectos Completados", proyectos: [] }
+        ];
+    }
     // Asegurar que todos los proyectos tengan "tareas" y "estado"
     const proyectosFormateados = proyectos.map(proyecto => ({
         ...proyecto,
