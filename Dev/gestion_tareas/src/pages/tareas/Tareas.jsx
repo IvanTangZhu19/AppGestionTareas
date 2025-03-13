@@ -8,29 +8,38 @@ import iconoEdit from "./../../assets/edit.svg"
 import iconoDelete from "./../../assets/delete.svg"
 
 function Tarea() {
-    const [tareas, setTareas] = useState([]);
-    const navigate = useNavigate();
-    
-    useEffect(() => {
-        setTareas(traerTareas());
-    }, []);
+  const [tareas, setTareas] = useState([]);
+  const navigate = useNavigate();
 
-    // Manejar eliminación
-    const handleEliminar = (proyectoId, tareaId) => {
-        const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
-        if (confirmacion) {
-            if (eliminarTarea(proyectoId, tareaId)) {
-                setTimeout(() => setTareas(traerTareas()), 100);
-            }
-        }
-    };
+  useEffect(() => {
+    setTareas(traerTareas());
+  }, []);
 
-    // Manejar completado
-    const handleCompletar = (proyectoId, tareaId) => {
-        if (completarTarea(proyectoId, tareaId)) {
-            setTimeout(() => setTareas(traerTareas()), 100);
-        }
-    };
+  // Función para obtener el color del proyecto
+  const getProjectColor = (projectId) => {
+    const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
+    const proyecto = proyectos.find(p => p.id === projectId);
+    return proyecto ? proyecto.color : '#fff'; // Valor por defecto si no se encuentra
+  };
+
+  // Manejar eliminación
+  const handleEliminar = (proyectoId, tareaId) => {
+    const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
+    if (confirmacion) {
+      if (eliminarTarea(proyectoId, tareaId)) {
+        // Actualizar listado tras eliminar
+        setTimeout(() => setTareas(traerTareas()), 100);
+      }
+    }
+  };
+
+  // Manejar completado
+  const handleCompletar = (proyectoId, tareaId) => {
+    if (completarTarea(proyectoId, tareaId)) {
+      // Actualizar listado tras completar
+      setTimeout(() => setTareas(traerTareas()), 100);
+    }
+  };
 
     return (
         <div className="contenedor">

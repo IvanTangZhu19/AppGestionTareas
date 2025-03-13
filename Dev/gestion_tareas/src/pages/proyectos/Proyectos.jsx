@@ -8,29 +8,29 @@ import iconoEdit from "./../../assets/edit.svg"
 import iconoDelete from "./../../assets/delete.svg"
 
 function Proyecto() {
-    const [proyectos, setProyectos] = useState([]);
-    const navigate = useNavigate();
+  const [proyectos, setProyectos] = useState([]);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        setProyectos(traerProyectos());
-    }, []);
+  useEffect(() => {
+    setProyectos(traerProyectos());
+  }, []);
 
-    // Eliminar proyecto por ID
-    const handleEliminar = (id) => {
-        const confirmacion = window.confirm("¿Estás seguro de eliminar este proyecto?");
-        if (confirmacion) {
-            eliminarProyecto(id);
-            setProyectos(traerProyectos()); // Actualizar estado
-            navigate("/proyectos");
-        }
-    };
+  // Eliminar proyecto por ID
+  const handleEliminar = (id) => {
+    const confirmacion = window.confirm("¿Estás seguro de eliminar este proyecto?");
+    if (confirmacion) {
+      eliminarProyecto(id);
+      setProyectos(traerProyectos());
+      navigate("/proyectos");
+    }
+  };
 
-    // Completar proyecto
-    const handleCompletar = (id) => {
-        if (completarProyecto(id)) {
-            setProyectos(traerProyectos()); // Actualizar estado
-        }
-    };
+  // Completar proyecto
+  const handleCompletar = (id) => {
+    if (completarProyecto(id)) {
+      setProyectos(traerProyectos());
+    }
+  };
 
     return (
         <div className="contenedor_proyectos">
