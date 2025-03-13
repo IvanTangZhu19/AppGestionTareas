@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import eliminarTarea from "../../methods/eliminarTarea";
 import completarTarea from "../../methods/completarTarea";
 import traerTareas from "../../methods/traerTareas";
+import iconoEdit from "./../../assets/edit.svg"
+import iconoDelete from "./../../assets/delete.svg"
 
 function Tarea() {
     const [tareas, setTareas] = useState([]);
@@ -16,7 +18,7 @@ function Tarea() {
     // Manejar eliminación
     const handleEliminar = (proyectoId, tareaId) => {
         const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
-        if(confirmacion){
+        if (confirmacion) {
             if (eliminarTarea(proyectoId, tareaId)) {
                 setTimeout(() => setTareas(traerTareas()), 100);
             }
@@ -36,7 +38,14 @@ function Tarea() {
             <h2>Tareas</h2>
             {tareas.map((tareasCompleto, index) => (
                 <div key={index}>
-                    <p className="subtitulo">{tareasCompleto.titulo}</p>
+                    <div className="subtitulo_boton">
+                        <p className="subtitulo">{tareasCompleto.titulo}</p>
+                        {tareasCompleto.titulo == "Tareas Pendientes" &&
+                            <button className="boton_agregar">
+                                <NavLink className="enlace" to="/tareas/crear">+</NavLink>
+                            </button>
+                        }
+                    </div>
                     {tareasCompleto.tareas.length == 0 &&
                         <p className="margen">No hay tareas disponibles</p>
                     }
@@ -45,6 +54,7 @@ function Tarea() {
                             <div>
                                 <div key={tarea.id}>
                                     <div className="contenedor_tarea_largo">
+                                        <p>Proyecto: {tarea.proyectoTitulo}</p>
                                         <div className="nombre_fecha">
                                             <p>{tarea.titulo}</p>
                                             <p>{tarea.fecha}</p>
@@ -58,14 +68,14 @@ function Tarea() {
                                                 to={`/tareas/editar/${tarea.proyectoID}/${tarea.id}`}
                                                 className="enlace_editar"
                                             >
-                                                Editar
+                                                <img src={iconoEdit} alt="" />
                                             </NavLink>
                                         </button>
                                         <button
                                             className="eliminar"
                                             onClick={() => handleEliminar(tarea.proyectoID, tarea.id)}
                                         >
-                                            Eliminar
+                                            <img src={iconoDelete} alt="" />
                                         </button>
                                         {tarea.estado == "activo" &&
                                             <button
@@ -82,9 +92,6 @@ function Tarea() {
                     </div>
                 </div>
             ))}
-            <button className="boton_agregar">
-                <NavLink className="enlace" to="/tareas/crear">+</NavLink>
-            </button>
         </div>
     );
 }

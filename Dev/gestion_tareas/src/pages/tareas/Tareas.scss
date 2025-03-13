@@ -16,6 +16,11 @@
         margin-left: 20px;
         margin-bottom: 5px;
     }
+    .subtitulo_boton{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
     .margen{
         margin-left: 30px;
     }

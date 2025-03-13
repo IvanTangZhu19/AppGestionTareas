@@ -2,8 +2,10 @@ import "./Proyectos.scss";
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from "react-router-dom";
 import traerProyectos from "./../../methods/traerProyectos";
-import eliminarProyecto from "../../methods/eliminarProyecto"; 
-import completarProyecto from "../../methods/completarProyecto"; 
+import eliminarProyecto from "../../methods/eliminarProyecto";
+import completarProyecto from "../../methods/completarProyecto";
+import iconoEdit from "./../../assets/edit.svg"
+import iconoDelete from "./../../assets/delete.svg"
 
 function Proyecto() {
     const [proyectos, setProyectos] = useState([]);
@@ -36,8 +38,15 @@ function Proyecto() {
             <h2>Proyectos</h2>
             {proyectos.map((proyectoCompletos, index) => (
                 <div key={index}>
-                    <p className="subtitulo">{proyectoCompletos.titulo}</p>
-                    {proyectoCompletos.proyectos.length === 0 && 
+                    <div className="subtitulo_boton">
+                        <p className="subtitulo">{proyectoCompletos.titulo}</p>
+                        {proyectoCompletos.titulo == "Proyectos Pendientes" &&
+                            <button className="boton_agregar">
+                                <NavLink className="enlace" to="/tareas/crear">+</NavLink>
+                            </button>
+                        }
+                    </div>
+                    {proyectoCompletos.proyectos.length === 0 &&
                         <p className="margen">No hay proyectos disponibles</p>
                     }
                     <div className="proyectos">
@@ -49,10 +58,11 @@ function Proyecto() {
                                         <p>{proyecto.fecha}</p>
                                     </div>
                                     <p>Descripción: {proyecto.descripcion}</p>
+                                    <p>Tareas: </p>
                                     <div>
                                         {proyecto.tareas.map((tarea) => (
                                             <li key={tarea.id}>
-                                                {tarea.titulo} {tarea.fecha} 
+                                                {tarea.titulo} {tarea.fecha}
                                                 {tarea.estado == "completado" &&
                                                     <span>✓</span>
                                                 }
@@ -60,25 +70,25 @@ function Proyecto() {
                                         ))}
                                     </div>
                                 </div>
-                                {proyecto.id != 1 && 
+                                {proyecto.id != 1 &&
                                     <div className="botones_proyectos">
                                         <button className="editar">
                                             {/* Enlace con ID real */}
-                                            <NavLink 
-                                                to={`/proyectos/editar/${proyecto.id}`} 
+                                            <NavLink
+                                                to={`/proyectos/editar/${proyecto.id}`}
                                                 className="enlace_editar"
                                             >
-                                                Editar
+                                                <img src={iconoEdit} alt="" />
                                             </NavLink>
                                         </button>
-                                        <button 
-                                            className="eliminar" 
+                                        <button
+                                            className="eliminar"
                                             onClick={() => handleEliminar(proyecto.id)}
                                         >
-                                            Eliminar
+                                            <img src={iconoDelete} alt="" />
                                         </button>
                                         {proyecto.estado != "completado" &&
-                                            <button 
+                                            <button
                                                 className="completar"
                                                 onClick={() => handleCompletar(proyecto.id)}
                                             >
@@ -92,9 +102,6 @@ function Proyecto() {
                     </div>
                 </div>
             ))}
-            <button className="boton_agregar">
-                <NavLink className="enlace" to="/proyectos/crear">+</NavLink>
-            </button>
         </div>
     );
 }

@@ -6,20 +6,24 @@ $color_botones: #779CAB;
     margin-top: 0;
     button{
         cursor: pointer;
-        padding: 10px;
-        font-size: 16px;
+        padding: 5px;
+        font-size: 26px;
         background-color: $color_botones;
         margin-right: 0;
         box-shadow: none;
         border: 1px solid black;
     }
     .editar{
+        width: 50px;
         text-decoration: none;
         border-bottom-left-radius: 15px;
         .enlace_editar{
             text-decoration: none;
             color: black;
         }
+    }
+    .eliminar{
+        width: 50px;
     }
     .completar{
         border-bottom-right-radius: 15px;

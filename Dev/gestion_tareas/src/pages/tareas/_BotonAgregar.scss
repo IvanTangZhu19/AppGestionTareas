@@ -2,13 +2,11 @@ $color_agregar: #779CAB;
 $color_boton: black;
 
 .boton_agregar{
+    width: 60px;
+    height: 60px;
     background-color: $color_agregar;
-    position: fixed !important;
-    padding: 10px;
-    top: 400px;
-    left: 300px;
-    border-radius: 30px;
-    font-size: 40px;
+    border-radius: 100%;
+    font-size: 50px;
     border: none;
     z-index: 1000;
     will-change: transform, opacity;
