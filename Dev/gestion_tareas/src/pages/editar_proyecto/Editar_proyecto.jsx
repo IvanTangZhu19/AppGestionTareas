@@ -117,15 +117,23 @@ function Editar_proyecto() {
         </div>
 
         {/* Grupo: Color */}
-        <div className="form-group">
-          <label htmlFor="color">Color del Proyecto</label>
-          <input
-            id="color"
-            type="color"
-            value={formData.color}
-            onChange={(e) => setFormData({ ...formData, color: e.target.value })}
-          />
+        <div className="form-group color-field">
+            <label htmlFor="color">Color del Proyecto</label>
+            <div className="color-picker-wrapper">
+                <input
+                id="color"
+                type="color"
+                value={formData.color}
+                onChange={(e) => setFormData({ ...formData, color: e.target.value })}
+                />
+                {/* Vista previa más grande */}
+                <div
+                className="color-preview"
+                style={{ backgroundColor: formData.color }}
+                />
         </div>
+        </div>
+
 
         {/* Sección: Listado de Tareas */}
         <div className="tasks-section">

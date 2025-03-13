@@ -194,4 +194,35 @@
       }
     }
   }
+  .color-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
   
+    .color-picker-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  
+      input[type="color"] {
+        /* Esto hace el picker un poco más grande */
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+      }
+  
+      .color-preview {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        /* O si lo quieres circular: 
+           border-radius: 50%; 
+        */
+      }
+    }
+  }
+    
