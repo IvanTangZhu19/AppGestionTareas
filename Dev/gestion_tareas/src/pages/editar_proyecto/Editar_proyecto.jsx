@@ -118,22 +118,20 @@ function Editar_proyecto() {
 
         {/* Grupo: Color */}
         <div className="form-group color-field">
-            <label htmlFor="color">Color del Proyecto</label>
-            <div className="color-picker-wrapper">
-                <input
-                id="color"
-                type="color"
-                value={formData.color}
-                onChange={(e) => setFormData({ ...formData, color: e.target.value })}
-                />
-                {/* Vista previa más grande */}
-                <div
-                className="color-preview"
-                style={{ backgroundColor: formData.color }}
-                />
+          <label htmlFor="color">Color del Proyecto</label>
+          <div className="color-picker-wrapper">
+            <input
+              id="color"
+              type="color"
+              value={formData.color}
+              onChange={(e) => setFormData({ ...formData, color: e.target.value })}
+            />
+            <div
+              className="color-preview"
+              style={{ backgroundColor: formData.color }}
+            />
+          </div>
         </div>
-        </div>
-
 
         {/* Sección: Listado de Tareas */}
         <div className="tasks-section">
@@ -201,12 +199,12 @@ function Editar_proyecto() {
         {/* Mensaje de error si existe */}
         {error && <p className="error-msg">{error}</p>}
 
-        {/* Botones de acción */}
-        <div className="action-buttons">
-          <NavLink to="/proyectos" className="btn-cancel">
+        {/* Botones de acción (tomados de Editar_Tarea.jsx) */}
+        <div className="botones-accion">
+          <NavLink to="/proyectos" className="boton-cancelar">
             Cancelar
           </NavLink>
-          <button type="submit" className="btn-save">
+          <button type="submit" className="boton-guardar">
             Guardar cambios
           </button>
         </div>
