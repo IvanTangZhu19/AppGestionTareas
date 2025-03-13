@@ -62,7 +62,9 @@ function Tarea() {
                         {tareasCompleto.tareas.map((tarea) => (
                             <div>
                                 <div key={tarea.id}>
-                                    <div className="contenedor_tarea_largo">
+                                    <div className="contenedor_tarea_largo"
+                                        style={{ backgroundColor: getProjectColor(tarea.proyectoID) }}
+                                    >
                                         <p>Proyecto: {tarea.proyectoTitulo}</p>
                                         <div className="nombre_fecha">
                                             <p>{tarea.titulo}</p>

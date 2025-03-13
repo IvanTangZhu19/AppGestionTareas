@@ -52,7 +52,9 @@ function Proyecto() {
                     <div className="proyectos">
                         {proyectoCompletos.proyectos.map((proyecto) => (
                             <section key={proyecto.id}>
-                                <div className="contenedor_proyecto_largo">
+                                <div className="contenedor_proyecto_largo"
+                                    style={{ backgroundColor: proyecto.color || '#fff' }}
+                                >
                                     <div className="nombre">
                                         <p>{proyecto.titulo}</p>
                                         <p>{proyecto.fecha}</p>
