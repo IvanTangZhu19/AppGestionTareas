@@ -1,5 +1,5 @@
 {
-  "name": "gestion_tareas",
+  "name": "TaskMaster",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^7.1.0",
+    "@capacitor/core": "^7.1.0",
     "animate.css": "^4.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -18,6 +20,7 @@
     "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
+    "@capacitor/cli": "^7.1.0",
     "@eslint/js": "^9.19.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
