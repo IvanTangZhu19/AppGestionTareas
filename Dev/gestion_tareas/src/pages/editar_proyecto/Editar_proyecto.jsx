@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import editarProyecto from '../../methods/editarProyecto';
 import './Editar_proyecto.scss'; // Importa el SCSS específico
+import Modal from "./../../components/ModalAgregar/Modal"
 
 function Editar_proyecto() {
   const { id } = useParams();
@@ -13,6 +14,7 @@ function Editar_proyecto() {
     tareas: []
   });
   const [error, setError] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
 
   // Estado para la nueva tarea a agregar
   const [nuevaTarea, setNuevaTarea] = useState({
@@ -65,6 +67,7 @@ function Editar_proyecto() {
     });
     // Limpiar campos de la nueva tarea
     setNuevaTarea({ titulo: '', fecha: '', descripcion: '' });
+    setModalOpen(false);
   };
 
   // Eliminar tarea de la lista
@@ -77,10 +80,8 @@ function Editar_proyecto() {
 
   return (
     <div className="edit-project-container">
-      <header className="header-edicion">
-        <h2>Editar proyecto</h2>
-      </header>
-
+      <span/>
+      <h2>Editar proyecto</h2>
       <form onSubmit={handleSubmit} className="edit-project-form">
         {/* Grupo: Título */}
         <div className="form-group">
@@ -158,9 +159,25 @@ function Editar_proyecto() {
           ) : (
             <p className="no-tasks-msg">No hay tareas añadidas</p>
           )}
+          <button type="button" className="btn-add-task" onClick={() => setModalOpen(true)}>
+            Agregar Tarea
+          </button>
         </div>
+        {/* Mensaje de error si existe */}
+        {error && <p className="error-msg">{error}</p>}
 
-        {/* Sección: Agregar nueva tarea */}
+        {/* Botones de acción (tomados de Editar_Tarea.jsx) */}
+        <div className="botones-accion">
+          <NavLink to="/proyectos" className="boton-cancelar">
+            Cancelar
+          </NavLink>
+          <button type="submit" className="boton-guardar">
+            Guardar cambios
+          </button>
+        </div>
+      </form>
+      {/* Sección: Agregar nueva tarea */}
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
         <div className="add-task-section">
           <h4>Agregar Nueva Tarea</h4>
           <div className="form-group">
@@ -195,20 +212,7 @@ function Editar_proyecto() {
             Agregar Tarea
           </button>
         </div>
-
-        {/* Mensaje de error si existe */}
-        {error && <p className="error-msg">{error}</p>}
-
-        {/* Botones de acción (tomados de Editar_Tarea.jsx) */}
-        <div className="botones-accion">
-          <NavLink to="/proyectos" className="boton-cancelar">
-            Cancelar
-          </NavLink>
-          <button type="submit" className="boton-guardar">
-            Guardar cambios
-          </button>
-        </div>
-      </form>
+      </Modal>
     </div>
   );
 }
