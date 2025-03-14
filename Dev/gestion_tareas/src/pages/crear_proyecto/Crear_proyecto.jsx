@@ -8,6 +8,7 @@ function Crear_Proyecto() {
         titulo: '',
         descripcion: '',
         fecha: '',
+        color: '#ffffff'
     });
     const [error, setError] = useState([]);
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ function Crear_Proyecto() {
         const hoy = new Date();
         const fecha = new Date(formData.fecha);
 
-        if(fecha <= hoy){
+        if (fecha <= hoy) {
             setError("La fecha debe ser mayor al día de hoy");
             return;
         }
@@ -27,38 +28,53 @@ function Crear_Proyecto() {
     };
     return (
         <div className="contenedor-formulario">
-            <span/>
+            <span />
             <h2>Crear proyecto</h2>
             <form onSubmit={handleSubmit}>
                 <div className="campo-formulario">
                     <label>Título</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         value={formData.titulo}
-                        onChange={(e) => setFormData({...formData, titulo: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, titulo: e.target.value })}
                         required
                     />
                 </div>
 
                 <div className="campo-formulario">
                     <label>Fecha</label>
-                    <input 
-                        type="date" 
+                    <input
+                        type="date"
                         value={formData.fecha}
-                        onChange={(e) => setFormData({...formData, fecha: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, fecha: e.target.value })}
                         required
                     />
                 </div>
 
                 <div className="campo-formulario">
                     <label>Descripción</label>
-                    <textarea 
+                    <textarea
                         value={formData.descripcion}
-                        onChange={(e) => setFormData({...formData, descripcion: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, descripcion: e.target.value })}
                         required
                     />
                 </div>
-                {error.length > 0 && 
+                <div className="campo-formulario color-field">
+                    <label htmlFor="color">Color del Proyecto</label>
+                    <div className="color-picker-wrapper">
+                        <input
+                            id="color"
+                            type="color"
+                            value={formData.color}
+                            onChange={(e) => setFormData({ ...formData, color: e.target.value })}
+                        />
+                        <div
+                            className="color-preview"
+                            style={{ backgroundColor: formData.color }}
+                        />
+                    </div>
+                </div>
+                {error.length > 0 &&
                     <p>{error}</p>
                 }
                 <div className="botones-formulario">

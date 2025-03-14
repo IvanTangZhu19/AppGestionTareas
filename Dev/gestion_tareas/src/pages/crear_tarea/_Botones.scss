@@ -1,5 +1,6 @@
 $color_cancelar: #ff4444;
 $color_agregar: #779CAB;
+$font: 'WorkSans';
 
 .botones-formulario {
     display: flex;
@@ -7,6 +8,7 @@ $color_agregar: #779CAB;
     margin-top: 30px;
 
     button {
+        font-family: $font;
         cursor: pointer;
         border: none;
         position: none;

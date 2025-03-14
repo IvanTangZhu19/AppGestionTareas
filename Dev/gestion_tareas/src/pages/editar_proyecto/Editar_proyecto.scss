@@ -1,181 +1,29 @@
 @use "./Modal";
+@use "./FormEditarProyecto";
 $color_boton: #779CAB;
 
 .edit-project-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 1rem;
-    box-sizing: border-box;
-    h2{
-      font-size: 30px;
-      text-align: center;
-    }
-     
-    /* Añade un padding extra en la parte inferior 
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  /* Añade un padding extra en la parte inferior 
        para que los botones queden por encima de la barra */
-    padding-bottom: 6rem; 
-  }
-  
-  .edit-project-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  
-    /* Ajuste final para asegurar un espacio adicional al final */
-    margin-bottom: 2rem;
-  
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-  
-      label {
-        font-weight: 600;
-        color: #555;
-        font-size: 0.95rem;
-      }
-  
-      input[type='text'],
-      input[type='date'],
-      input[type='color'],
-      textarea {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 0.5rem;
-        font-size: 0.9rem;
-      }
-  
-      textarea {
-        min-height: 60px;
-      }
-    }
-  
-    .color-field {
-      .color-picker-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-  
-        input[type="color"] {
-          width: 40px;
-          height: 40px;
-          border: none;
-          cursor: pointer;
-        }
-  
-        .color-preview {
-          width: 40px;
-          height: 40px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-      }
-    }
-  
-    .tasks-section {
-      background-color: #f9f9f9;
-      padding: 0.75rem;
-      border-radius: 4px;
-  
-      h3, h4 {
-        margin-top: 0;
-        color: #333;
-      }
-      .btn-add-task {
-        background-color: #779CAB;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: 0.5rem;
-        cursor: pointer;
-        font-size: 0.9rem;
-      }
-    }
-  
-    .tasks-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-  
-      .task-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #fff;
-        margin-bottom: 0.5rem;
-        border-radius: 4px;
-        padding: 0.5rem;
-  
-        .task-info {
-          .task-title {
-            font-weight: 600;
-            margin: 0;
-            color: #333;
-          }
-          .task-date,
-          .task-desc {
-            margin: 0.25rem 0 0;
-            color: #666;
-            font-size: 0.85rem;
-          }
-        }
-  
-        .btn-delete-task {
-          background-color: #dc3545;
-          color: #fff;
-          border: none;
-          border-radius: 4px;
-          padding: 0.4rem 0.8rem;
-          cursor: pointer;
-          font-size: 0.8rem;
-        }
-      }
-    }
-  
-    .error-msg {
-      color: #dc3545;
-      font-weight: 600;
-      text-align: center;
-    }
-  
-    /* Bloque de botones al final */
-    .botones-accion {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-  
-      .boton-cancelar,
-      .boton-guardar {
-        flex: 1;
-        text-align: center;
-        padding: 0.75rem;
-        border-radius: 4px;
-        font-weight: 600;
-        text-decoration: none;
-        font-size: 1rem;
-        margin: 0 0.25rem;
-        cursor: pointer;
-      }
-  
-      .boton-cancelar {
-        background-color: #dc3545;
-        color: #fff;
-      }
-  
-      .boton-guardar {
-        background-color: #28a745;
-        color: #fff;
-        border: none;
-      }
-    }
-  }
-  
-  /* Responsividad para pantallas pequeñas */
+  padding-bottom: 6rem;
+}
+
+/*
+    
   @media (max-width: 768px) {
     .edit-project-container {
       padding: 0.5rem;
-      padding-bottom: 5rem; /* Ajusta según necesites */
+      padding-bottom: 5rem; 
     }
   
     .header-edicion h2 {
@@ -206,3 +54,5 @@ $color_boton: #779CAB;
     }
   }
   
+  
+  */

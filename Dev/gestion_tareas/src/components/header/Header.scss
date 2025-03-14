@@ -2,12 +2,13 @@ $color_fondo_header: #35524A;
 $color_fuente : white;
 
 .header {
+    position: fixed;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     background-color: $color_fondo_header;
     padding: 10px;
     color: $color_fuente;
+    z-index: 1;
     img{
         width: 110px
     }

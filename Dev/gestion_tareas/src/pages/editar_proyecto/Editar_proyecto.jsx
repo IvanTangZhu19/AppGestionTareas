@@ -80,7 +80,7 @@ function Editar_proyecto() {
 
   return (
     <div className="edit-project-container">
-      <span/>
+      <span />
       <h2>Editar proyecto</h2>
       <form onSubmit={handleSubmit} className="edit-project-form">
         {/* Grupo: Título */}
@@ -144,7 +144,6 @@ function Editar_proyecto() {
                   <div className="task-info">
                     <p className="task-title">{tarea.titulo}</p>
                     {tarea.fecha && <p className="task-date">{tarea.fecha}</p>}
-                    {tarea.descripcion && <p className="task-desc">{tarea.descripcion}</p>}
                   </div>
                   <button
                     type="button"

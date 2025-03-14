@@ -1,24 +1,22 @@
 function crearProyecto(data) {
     let proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
-    let id;
-    // Si no hay proyectos el id empieza como 1
-    if (proyectos.length == 0) {
-        id = 1;
-    } else {
-        id = proyectos.length + 1;
-    }
+    let proyectoID = JSON.parse(localStorage.getItem('proyectoID')) || 1;
+
+    proyectoID = proyectoID + 1;
 
     const nuevoProyecto = {
-        "id": id,
+        "id": proyectoID,
         "titulo": data.titulo,
         "descripcion": data.descripcion,
         "fecha": data.fecha,
         "tareas": [],
-        "estado": "activo"
+        "estado": "activo",
+        "color": data.color
     };
 
     const proyectosActualizados = [...proyectos, nuevoProyecto];
     localStorage.setItem('proyectos', JSON.stringify(proyectosActualizados));
+    localStorage.setItem('proyectoID', JSON.stringify(proyectoID));
 }
 
 export default crearProyecto;
