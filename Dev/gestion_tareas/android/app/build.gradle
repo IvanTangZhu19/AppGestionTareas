@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.taskmaster"
+    namespace "co.edu.upb.taskmaster"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.taskmaster"
+        applicationId "co.edu.upb.taskmaster"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

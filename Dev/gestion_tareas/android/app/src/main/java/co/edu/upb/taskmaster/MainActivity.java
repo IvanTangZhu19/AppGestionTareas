@@ -1,4 +1,4 @@
-package com.taskmaster;
+package co.edu.upb.taskmaster;
 
 import com.getcapacitor.BridgeActivity;
 
