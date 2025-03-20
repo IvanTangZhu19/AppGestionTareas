@@ -6,7 +6,8 @@ function traerTareas(){
             const tareasConProyecto = proyecto.tareas.map(tarea => ({
                 ...tarea,
                 proyectoID: proyecto.id,
-                proyectoTitulo: proyecto.titulo
+                proyectoTitulo: proyecto.titulo,
+                proyectoColor: proyecto.color
             }))
             return tareas.concat(tareasConProyecto);
         }, []);

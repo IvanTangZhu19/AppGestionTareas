@@ -1,11 +1,8 @@
-$color_fondo_contenedores: #627C85;
-
 @use "./BotonesProyectos";
 
 .proyectos{
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .contenedor_proyecto_largo{
@@ -15,7 +12,6 @@ $color_fondo_contenedores: #627C85;
     margin-top: 20px;
     margin-bottom: 0;
     margin-left: 20px;
-    background-color: $color_fondo_contenedores;
     padding: 5px;
     border-radius: 20px 20px 20px 0;
     p{

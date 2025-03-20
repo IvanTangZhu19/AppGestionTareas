@@ -5,6 +5,7 @@ import iconoDelete from "./../../assets/delete.svg"
 import traerProyectoPorID from "./../../methods/traerProyectoPorID"
 import eliminarTarea from "../../methods/eliminarTarea";
 import completarTarea from "../../methods/completarTarea";
+import esColorNegro from "./../../methods/esColorNegro"
 
 function Proyecto() {
     const { id } = useParams();
@@ -27,6 +28,10 @@ function Proyecto() {
             tareas: proyecto.tareas
         });
     }, [id]);
+
+    function colorTexto (color) {
+        return esColorNegro(color) ? '#fff' : '#000';
+      };
 
     const handleEliminar = (proyectoId, tareaId) => {
         const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
@@ -63,7 +68,10 @@ function Proyecto() {
                     <div>
                         <div key={tarea.id}>
                             <div className="contenedor_tarea_largo"
-                                style={{ backgroundColor: proyecto.color }}
+                                style={{ 
+                                    backgroundColor: proyecto.color,
+                                    color: colorTexto(proyecto.color)
+                                 }}
                             >
                                 <div className="nombre_fecha">
                                     <p>{tarea.titulo}</p>

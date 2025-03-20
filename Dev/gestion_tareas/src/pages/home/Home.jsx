@@ -33,7 +33,7 @@ function Home() {
     };
 
     return (
-        <div className="contenedor">
+        <div className="contenedor_home">
             <span />
             <h2>Inicio</h2>
             <p className="subtitulo">Tareas pendientes</p>

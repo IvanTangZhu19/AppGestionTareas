@@ -12,47 +12,5 @@ $color_boton: #779CAB;
     font-size: 30px;
     text-align: center;
   }
-
-  /* Añade un padding extra en la parte inferior 
-       para que los botones queden por encima de la barra */
   padding-bottom: 6rem;
 }
-
-/*
-    
-  @media (max-width: 768px) {
-    .edit-project-container {
-      padding: 0.5rem;
-      padding-bottom: 5rem; 
-    }
-  
-    .header-edicion h2 {
-      font-size: 1.25rem;
-    }
-  
-    .edit-project-form {
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-  
-      .form-group {
-        label {
-          font-size: 0.9rem;
-        }
-        input,
-        textarea {
-          font-size: 0.85rem;
-        }
-      }
-  
-      .botones-accion {
-        .boton-cancelar,
-        .boton-guardar {
-          font-size: 0.85rem;
-          padding: 0.5rem;
-        }
-      }
-    }
-  }
-  
-  
-  */

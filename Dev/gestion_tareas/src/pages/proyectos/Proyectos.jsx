@@ -7,6 +7,7 @@ import completarProyecto from "../../methods/completarProyecto";
 import iconoEdit from "./../../assets/edit.svg"
 import iconoDelete from "./../../assets/delete.svg"
 import iconoVer from "./../../assets/ver.svg"
+import esColorNegro from "./../../methods/esColorNegro"
 
 function Proyecto() {
   const [proyectos, setProyectos] = useState([]);
@@ -15,6 +16,10 @@ function Proyecto() {
   useEffect(() => {
     setProyectos(traerProyectos());
   }, []);
+
+  function colorTexto (color) {
+    return esColorNegro(color) ? '#fff' : '#000';
+  };
 
   // Eliminar proyecto por ID
   const handleEliminar = (id) => {
@@ -54,7 +59,10 @@ function Proyecto() {
                         {proyectoCompletos.proyectos.map((proyecto) => (
                             <section key={proyecto.id}>
                                 <div className="contenedor_proyecto_largo"
-                                    style={{ backgroundColor: proyecto.color || '#fff' }}
+                                    style={{ 
+                                        backgroundColor: proyecto.color || '#fff',
+                                        color: colorTexto(proyecto.color) 
+                                    }}
                                 >
                                     <div className="nombre">
                                         <p>{proyecto.titulo}</p>

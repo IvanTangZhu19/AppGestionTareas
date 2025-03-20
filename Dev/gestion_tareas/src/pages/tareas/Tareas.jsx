@@ -6,6 +6,7 @@ import completarTarea from "../../methods/completarTarea";
 import traerTareas from "../../methods/traerTareas";
 import iconoEdit from "./../../assets/edit.svg"
 import iconoDelete from "./../../assets/delete.svg"
+import esColorNegro from "./../../methods/esColorNegro"
 
 function Tarea() {
   const [tareas, setTareas] = useState([]);
@@ -15,11 +16,8 @@ function Tarea() {
     setTareas(traerTareas());
   }, []);
 
-  // Función para obtener el color del proyecto
-  const getProjectColor = (projectId) => {
-    const proyectos = JSON.parse(localStorage.getItem('proyectos')) || [];
-    const proyecto = proyectos.find(p => p.id === projectId);
-    return proyecto ? proyecto.color : '#fff'; // Valor por defecto si no se encuentra
+  function colorTexto (color) {
+    return esColorNegro(color) ? '#fff' : '#000';
   };
 
   // Manejar eliminación
@@ -63,7 +61,10 @@ function Tarea() {
                             <div>
                                 <div key={tarea.id}>
                                     <div className="contenedor_tarea_largo"
-                                        style={{ backgroundColor: getProjectColor(tarea.proyectoID) }}
+                                        style={{ 
+                                            backgroundColor: tarea.proyectoColor,
+                                            color: colorTexto(tarea.proyectoColor)
+                                         }}
                                     >
                                         <p>Proyecto: {tarea.proyectoTitulo}</p>
                                         <div className="nombre_fecha">
