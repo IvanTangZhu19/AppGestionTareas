@@ -7,6 +7,7 @@ import Tareas from './pages/tareas/Tareas.jsx'
 import Crear_Tarea from './pages/crear_tarea/Crear_Tarea.jsx'
 import Editar_Tarea from './pages/editar_tarea/Editar_tarea.jsx'
 import Proyectos from './pages/proyectos/Proyectos.jsx'
+import Proyecto from './pages/proyecto/Proyecto.jsx'
 import Crear_Proyecto from './pages/crear_proyecto/Crear_proyecto.jsx'
 import Editar_Proyecto from './pages/editar_proyecto/Editar_proyecto.jsx'
 import Header from './components/header/header.jsx'
@@ -36,6 +37,7 @@ function RutasAnimadas(){
             <Route path="/proyectos/crear" element={<Crear_Proyecto />} />
             <Route path="/tareas/editar/:proyectoId/:tareaId" element={<Editar_Tarea />} />
             <Route path="/proyectos/editar/:id" element={<Editar_Proyecto />} />
+            <Route path="/proyectos/:id" element={<Proyecto />} />
           </Routes>
         </div>
       </CSSTransition>

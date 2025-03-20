@@ -6,6 +6,7 @@ import eliminarProyecto from "../../methods/eliminarProyecto";
 import completarProyecto from "../../methods/completarProyecto";
 import iconoEdit from "./../../assets/edit.svg"
 import iconoDelete from "./../../assets/delete.svg"
+import iconoVer from "./../../assets/ver.svg"
 
 function Proyecto() {
   const [proyectos, setProyectos] = useState([]);
@@ -80,6 +81,15 @@ function Proyecto() {
                                             className="enlace_editar"
                                         >
                                             <img src={iconoEdit} alt="" />
+                                        </NavLink>
+                                    </button>
+                                    <button className="eliminar">
+                                        {/* Enlace con ID real */}
+                                        <NavLink
+                                            to={`/proyectos/${proyecto.id}`}
+                                            className="enlace_editar"
+                                        >
+                                            <img src={iconoVer} alt="" />
                                         </NavLink>
                                     </button>
                                     <button
