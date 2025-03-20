@@ -3,8 +3,6 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import iconoEdit from "./../../assets/edit.svg"
 import iconoDelete from "./../../assets/delete.svg"
 import traerProyectoPorID from "./../../methods/traerProyectoPorID"
-import eliminarTarea from "../../methods/eliminarTarea";
-import completarTarea from "../../methods/completarTarea";
 import esColorNegro from "./../../methods/esColorNegro"
 import "./Botones_proyecto.scss";
 import { handleEliminarTarea, handleEliminarProyecto, handleCompletarTarea, handleCompletarProyecto } from "./handles";
@@ -45,7 +43,7 @@ function Proyecto() {
                 <p className="subtitulo">Titulo: {proyecto.titulo}</p>
                 <p>{proyecto.fecha}</p>
             </div>
-            <p className='margen'>Descripción: {proyecto.descripcion}</p>
+            <p className='margen ancho_descripcion'>Descripción: {proyecto.descripcion}</p>
             <p className='margen'>Estado: {proyecto.estado}</p>
             {proyecto.tareas.length == 0 &&
                 <p className="margen">No hay tareas disponibles</p>
