@@ -6,6 +6,8 @@ import traerProyectoPorID from "./../../methods/traerProyectoPorID"
 import eliminarTarea from "../../methods/eliminarTarea";
 import completarTarea from "../../methods/completarTarea";
 import esColorNegro from "./../../methods/esColorNegro"
+import "./Botones_proyecto.scss";
+import { handleEliminarTarea, handleEliminarProyecto, handleCompletarTarea, handleCompletarProyecto } from "./handles";
 
 function Proyecto() {
     const { id } = useParams();
@@ -14,7 +16,8 @@ function Proyecto() {
         fecha: '',
         descripcion: '',
         color: '#ffffff',
-        tareas: []
+        tareas: [],
+        estado: ''
     });
     const navigate = useNavigate();
 
@@ -25,31 +28,15 @@ function Proyecto() {
             fecha: proyecto.fecha,
             descripcion: proyecto.descripcion,
             color: proyecto.color,
-            tareas: proyecto.tareas
+            tareas: proyecto.tareas,
+            estado: proyecto.estado
         });
     }, [id]);
 
-    function colorTexto (color) {
+    function colorTexto(color) {
         return esColorNegro(color) ? '#fff' : '#000';
-      };
+    };
 
-    const handleEliminar = (proyectoId, tareaId) => {
-        const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
-        if (confirmacion) {
-          if (eliminarTarea(proyectoId, tareaId)) {
-            // Actualizar listado tras eliminar
-            setTimeout(() => setProyecto(traerProyectoPorID(parseInt(id))), 100);
-          }
-        }
-      };
-    
-      // Manejar completado
-      const handleCompletar = (proyectoId, tareaId) => {
-        if (completarTarea(proyectoId, tareaId)) {
-          // Actualizar listado tras completar
-          setTimeout(() => setProyecto(traerProyectoPorID(parseInt(id))), 100);
-        }
-      };
     return (
         <div className="contenedor">
             <span />
@@ -59,19 +46,37 @@ function Proyecto() {
                 <p>{proyecto.fecha}</p>
             </div>
             <p className='margen'>Descripción: {proyecto.descripcion}</p>
+            <p className='margen'>Estado: {proyecto.estado}</p>
             {proyecto.tareas.length == 0 &&
                 <p className="margen">No hay tareas disponibles</p>
             }
+            <p className='margen'>Acciones: </p>
+            <div className='botones_proyecto_individual'>
+                <button>
+                    <NavLink
+                        to={`/proyectos/editar/${id}`}
+                        className="enlace_editar"
+                    >
+                        Editar
+                    </NavLink>
+                </button>
+                <button onClick={() => handleEliminarProyecto(id, navigate)}>
+                    Eliminar
+                </button>
+                <button onClick={() => handleCompletarProyecto(id, setProyecto)}>
+                    Completar
+                </button>
+            </div>
             <p className='margen'>Tareas: </p>
             <div className="tareas">
                 {proyecto.tareas.map((tarea) => (
                     <div>
                         <div key={tarea.id}>
                             <div className="contenedor_tarea_largo"
-                                style={{ 
+                                style={{
                                     backgroundColor: proyecto.color,
                                     color: colorTexto(proyecto.color)
-                                 }}
+                                }}
                             >
                                 <div className="nombre_fecha">
                                     <p>{tarea.titulo}</p>
@@ -91,14 +96,14 @@ function Proyecto() {
                                 </button>
                                 <button
                                     className="eliminar"
-                                    onClick={() => handleEliminar(id, tarea.id)}
+                                    onClick={() => handleEliminarTarea(id, tarea.id)}
                                 >
                                     <img src={iconoDelete} alt="" />
                                 </button>
                                 {tarea.estado == "activo" &&
                                     <button
                                         className="completar"
-                                        onClick={() => handleCompletar(id, tarea.id)}
+                                        onClick={() => handleCompletarTarea(id, tarea.id)}
                                     >
                                         ✓
                                     </button>
