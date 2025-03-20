@@ -14,17 +14,18 @@ function Editar_Tarea() {
 
     useEffect(() => {
         const proyectosData = traerProyectos();
-        setProyectos(proyectosData[0].proyectos);
+        const proyectosCompletos = proyectosData[0].proyectos.concat(proyectosData[1].proyectos);
+        setProyectos(proyectosCompletos);
     }, []);
 
     useEffect(() => {
-        console.log("Lista de proyectos cargada:", proyectos);
-        console.log("Buscando proyecto con ID:", proyectoId);
+        //console.log("Lista de proyectos cargada:", proyectos);
+        //console.log("Buscando proyecto con ID:", proyectoId);
 
         if (proyectos.length === 0) return;
 
         const proyecto = proyectos.find(p => p.id == parseInt(proyectoId));
-        console.log("Proyecto encontrado:", proyecto);
+        //console.log("Proyecto encontrado:", proyecto);
 
         if (!proyecto) {
             setError('Proyecto no encontrado');

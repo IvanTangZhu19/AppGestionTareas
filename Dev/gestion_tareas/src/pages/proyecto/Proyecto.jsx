@@ -41,8 +41,8 @@ function Proyecto() {
             <h2>Proyectos</h2>
             <div className="subtitulo_boton">
                 <p className="subtitulo">Titulo: {proyecto.titulo}</p>
-                <p>{proyecto.fecha}</p>
             </div>
+            <p className='margen'>Fecha: {proyecto.fecha}</p>
             <p className='margen ancho_descripcion'>Descripción: {proyecto.descripcion}</p>
             <p className='margen'>Estado: {proyecto.estado}</p>
             {proyecto.tareas.length == 0 &&
@@ -111,6 +111,7 @@ function Proyecto() {
                     </div>
                 ))}
             </div>
+            <span className="margin_bottom"/>
         </div>
     );
 }

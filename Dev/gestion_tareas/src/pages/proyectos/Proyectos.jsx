@@ -120,6 +120,7 @@ function Proyecto() {
                     </div>
                 </div>
             ))}
+            <span className="margin_bottom"/>
         </div>
     );
 }

@@ -3,10 +3,12 @@
 $color_boton: #779CAB;
 
 .edit-project-container {
-  margin-top: 50px;
+  position: absolute;
+  width: 100%;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  margin-left: 30px;
 
   h2 {
     font-size: 30px;

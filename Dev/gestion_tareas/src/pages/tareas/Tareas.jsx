@@ -104,6 +104,7 @@ function Tarea() {
                     </div>
                 </div>
             ))}
+            <span className="margin_bottom"/>
         </div>
     );
 }

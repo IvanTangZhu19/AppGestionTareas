@@ -1,11 +1,13 @@
 @use "./ContenedorProyectos";
 
 .contenedor_proyectos{
+    position: absolute;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 100px;
-    margin-top: 60px;
+    margin-top: 70px;
     h2{
         font-size: 30px;
         text-align: center;
