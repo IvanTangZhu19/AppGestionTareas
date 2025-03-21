@@ -74,6 +74,14 @@ function Proyecto() {
                 <button onClick={() => handleCompletarProyecto(id, setProyecto)}>
                     Completar
                 </button>
+                <button>
+                    <NavLink
+                        to={`/tareas/crear`}
+                        className="enlace_editar"
+                    >
+                        Agregar Tarea
+                    </NavLink>
+                </button>
             </div>
             <p className='margen'>Tareas: </p>
             <div className="tareas">
