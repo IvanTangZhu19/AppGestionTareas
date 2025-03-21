@@ -33,9 +33,9 @@ function Editar_Tarea() {
             return;
         }
 
-        console.log("Buscando tarea con ID:", tareaId);
+        //console.log("Buscando tarea con ID:", tareaId);
         const tarea = proyecto.tareas?.find(t => t.id == parseInt(tareaId));
-        console.log("Tarea encontrada:", tarea);
+        //console.log("Tarea encontrada:", tarea);
 
         if (!tarea) {
             setError('Tarea no encontrada');

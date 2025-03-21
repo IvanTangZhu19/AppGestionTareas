@@ -2,10 +2,11 @@ $color_cancelar: #ff4444;
 $color_botones: #779CAB;
 
 .edit-project-form {
+    margin-left: 30px;
+    margin-right: 20px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* Ajuste final para asegurar un espacio adicional al final */
     margin-bottom: 2rem;
 
     .form-group {
@@ -31,6 +32,7 @@ $color_botones: #779CAB;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 0.9rem;
+            box-sizing: border-box;
         }
 
         textarea {

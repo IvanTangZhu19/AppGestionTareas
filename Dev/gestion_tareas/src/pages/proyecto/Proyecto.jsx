@@ -48,6 +48,16 @@ function Proyecto() {
             {proyecto.tareas.length == 0 &&
                 <p className="margen">No hay tareas disponibles</p>
             }
+            <div className="form-group color-field">
+                <div className="color-picker-wrapper">
+                    <p className='margen'>Color: </p>
+                    <div
+                        className="color-preview"
+                        style={{ backgroundColor: proyecto.color }}
+                    />
+                    <p>{proyecto.color}</p>
+                </div>
+            </div>
             <p className='margen'>Acciones: </p>
             <div className='botones_proyecto_individual'>
                 <button>
@@ -111,7 +121,7 @@ function Proyecto() {
                     </div>
                 ))}
             </div>
-            <span className="margin_bottom"/>
+            <span className="margin_bottom" />
         </div>
     );
 }

@@ -16,19 +16,19 @@ function Home() {
             totalTareas = proyecto.tareas.length;
             tareasCompletadas = proyecto.tareas.filter(tarea => tarea.estado == "completado").length;
             progreso = totalTareas > 0 ? (tareasCompletadas/totalTareas)*100 : 0;
-            return {...proyecto, progreso }
+            return {...proyecto, progreso: progreso.toFixed(2) }
         })
         setProyectos(proyectoProgreso);
     }, []);
     //Para slider de tareas
     const scroll = (ref, direction) => {
         if (ref.current) {
-            console.log("Scroll amount:", direction === 'left' ? -150 : 150);
+            //console.log("Scroll amount:", direction === 'left' ? -150 : 150);
             const scrollAmount = direction === 'left' ? -150 : 150;
             ref.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-            console.log("ScrollLeft después del desplazamiento:", ref.current.scrollLeft);
+            //console.log("ScrollLeft después del desplazamiento:", ref.current.scrollLeft);
         } else {
-            console.log("⚠ ref.current es null o undefined");
+            //console.log("⚠ ref.current es null o undefined");
         }
     };
 

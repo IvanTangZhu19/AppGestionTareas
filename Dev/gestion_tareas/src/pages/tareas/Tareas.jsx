@@ -68,7 +68,7 @@ function Tarea() {
                                     >
                                         <p>Proyecto: {tarea.proyectoTitulo}</p>
                                         <div className="nombre_fecha">
-                                            <p>{tarea.titulo}</p>
+                                            <p>Titulo: {tarea.titulo}</p>
                                             <p>{tarea.fecha}</p>
                                         </div>
                                         <p>Descripción: {tarea.descripcion}</p>

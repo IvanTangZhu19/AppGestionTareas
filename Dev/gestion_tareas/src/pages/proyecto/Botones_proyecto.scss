@@ -4,9 +4,10 @@ $font: 'WorkSans';
 .botones_proyecto_individual{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     margin-left: 30px;
     button{
+        margin: 10px;
+        border: none;
         background-color: $color_agregar;
         padding: 7px 10px;
         border-radius: 20px;
@@ -20,6 +21,6 @@ $font: 'WorkSans';
 }
 
 .ancho_descripcion{
-    width: 250px;
+    width: 340px;
     margin-right: 20px;
 }
