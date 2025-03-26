@@ -45,9 +45,6 @@ function Proyecto() {
             <p className='margen'>Fecha: {proyecto.fecha}</p>
             <p className='margen ancho_descripcion'>Descripción: {proyecto.descripcion}</p>
             <p className='margen'>Estado: {proyecto.estado}</p>
-            {proyecto.tareas.length == 0 &&
-                <p className="margen">No hay tareas disponibles</p>
-            }
             <div className="form-group color-field">
                 <div className="color-picker-wrapper">
                     <p className='margen'>Color: </p>
@@ -84,6 +81,9 @@ function Proyecto() {
                 </button>
             </div>
             <p className='margen'>Tareas: </p>
+            {proyecto.tareas.length == 0 &&
+                <p className="margen">Aún no hay tareas agregadas. ¡Crea tu primer tarea para el proyecto!</p>
+            }
             <div className="tareas">
                 {proyecto.tareas.map((tarea) => (
                     <div>

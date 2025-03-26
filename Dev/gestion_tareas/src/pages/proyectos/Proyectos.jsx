@@ -10,48 +10,51 @@ import iconoVer from "./../../assets/ver.svg"
 import esColorNegro from "./../../methods/esColorNegro"
 
 function Proyecto() {
-  const [proyectos, setProyectos] = useState([]);
-  const navigate = useNavigate();
+    const [proyectos, setProyectos] = useState([]);
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    setProyectos(traerProyectos());
-  }, []);
+    useEffect(() => {
+        setProyectos(traerProyectos());
+    }, []);
 
-  function colorTexto (color) {
-    return esColorNegro(color) ? '#fff' : '#000';
-  };
+    function colorTexto(color) {
+        return esColorNegro(color) ? '#fff' : '#000';
+    };
 
-  // Eliminar proyecto por ID
-  const handleEliminar = (id) => {
-    const confirmacion = window.confirm("¿Estás seguro de eliminar este proyecto?");
-    if (confirmacion) {
-      eliminarProyecto(id);
-      setProyectos(traerProyectos());
-      navigate("/proyectos");
-    }
-  };
+    // Eliminar proyecto por ID
+    const handleEliminar = (id) => {
+        const confirmacion = window.confirm("¿Estás seguro de eliminar este proyecto?");
+        if (confirmacion) {
+            eliminarProyecto(id);
+            setProyectos(traerProyectos());
+            navigate("/proyectos");
+        }
+    };
 
-  // Completar proyecto
-  const handleCompletar = (id) => {
-    if (completarProyecto(id)) {
-      setProyectos(traerProyectos());
-    }
-  };
+    // Completar proyecto
+    const handleCompletar = (id) => {
+        if (completarProyecto(id)) {
+            setProyectos(traerProyectos());
+        }
+    };
 
     return (
         <div className="contenedor_proyectos">
             <span />
             <h2>Proyectos</h2>
             {proyectos.map((proyectoCompletos, index) => (
-                <div key={index}>
-                    <div className="subtitulo_boton">
-                        <p className="subtitulo">{proyectoCompletos.titulo}</p>
+                <details open key={index}>
+                    <summary className="subtitulo_boton">
+                        <div className="subtitulo_flecha">
+                            <p className="subtitulo">{proyectoCompletos.titulo}</p>
+                            <p className="flecha">▼</p>
+                        </div>
                         {proyectoCompletos.titulo == "Proyectos Pendientes" &&
                             <button className="boton_agregar">
                                 <NavLink className="enlace" to="/proyectos/crear">+</NavLink>
                             </button>
                         }
-                    </div>
+                    </summary>
                     {proyectoCompletos.proyectos.length === 0 &&
                         <p className="margen">No hay proyectos disponibles</p>
                     }
@@ -59,9 +62,9 @@ function Proyecto() {
                         {proyectoCompletos.proyectos.map((proyecto) => (
                             <section key={proyecto.id}>
                                 <div className="contenedor_proyecto_largo"
-                                    style={{ 
+                                    style={{
                                         backgroundColor: proyecto.color || '#fff',
-                                        color: colorTexto(proyecto.color) 
+                                        color: colorTexto(proyecto.color)
                                     }}
                                 >
                                     <div className="nombre">
@@ -118,9 +121,9 @@ function Proyecto() {
                             </section>
                         ))}
                     </div>
-                </div>
+                </details>
             ))}
-            <span className="margin_bottom"/>
+            <span className="margin_bottom" />
         </div>
     );
 }

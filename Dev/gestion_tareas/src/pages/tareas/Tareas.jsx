@@ -44,15 +44,20 @@ function Tarea() {
             <span />
             <h2>Tareas</h2>
             {tareas.map((tareasCompleto, index) => (
-                <div key={index}>
-                    <div className="subtitulo_boton">
-                        <p className="subtitulo">{tareasCompleto.titulo}</p>
+                <details open key={index}>
+                    <summary className="subtitulo_boton">
+                        <div className="subtitulo_flecha">
+                            <p className="subtitulo">{tareasCompleto.titulo}</p>
+                            <p className="flecha">▼</p>
+                        </div>
                         {tareasCompleto.titulo == "Tareas Pendientes" &&
-                            <button className="boton_agregar">
+                            <button 
+                                onMouseDown={(e) => e.preventDefault()} 
+                                className="boton_agregar">
                                 <NavLink className="enlace" to="/tareas/crear">+</NavLink>
                             </button>
                         }
-                    </div>
+                    </summary>
                     {tareasCompleto.tareas.length == 0 &&
                         <p className="margen">No hay tareas disponibles</p>
                     }
@@ -102,7 +107,7 @@ function Tarea() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </details>
             ))}
             <span className="margin_bottom"/>
         </div>

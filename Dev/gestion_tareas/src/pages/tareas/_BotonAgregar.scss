@@ -10,6 +10,9 @@ $color_boton: black;
     border: none;
     z-index: 1000;
     will-change: transform, opacity;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .enlace{
         text-decoration: none;
         color: $color_boton;
