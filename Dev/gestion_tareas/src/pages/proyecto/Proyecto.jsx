@@ -112,14 +112,14 @@ function Proyecto() {
                                 </button>
                                 <button
                                     className="eliminar"
-                                    onClick={() => handleEliminarTarea(id, tarea.id)}
+                                    onClick={() => handleEliminarTarea(id, tarea.id, setProyecto)}
                                 >
                                     <img src={iconoDelete} alt="" />
                                 </button>
                                 {tarea.estado == "activo" &&
                                     <button
                                         className="completar"
-                                        onClick={() => handleCompletarTarea(id, tarea.id)}
+                                        onClick={() => handleCompletarTarea(id, tarea.id, setProyecto)}
                                     >
                                         ✓
                                     </button>

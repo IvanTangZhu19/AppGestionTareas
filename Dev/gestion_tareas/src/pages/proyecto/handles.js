@@ -4,12 +4,12 @@ import completarTarea from "./../../methods/completarTarea";
 import eliminarProyecto from "./../../methods/eliminarProyecto";
 import completarProyecto from "./../../methods/completarProyecto";
 
-export const handleEliminarTarea = (proyectoId, tareaId, setProyecto, id) => {
+export const handleEliminarTarea = (proyectoId, tareaId, setProyecto) => {
     const confirmacion = window.confirm("¿Estás seguro de eliminar esta tarea?");
     if (confirmacion) {
         if (eliminarTarea(proyectoId, tareaId)) {
             // Actualizar listado tras eliminar
-            setTimeout(() => setProyecto(traerProyectoPorID(parseInt(id))), 100);
+            setTimeout(() => setProyecto(traerProyectoPorID(parseInt(proyectoId))), 100);
         }
     }
 };
@@ -22,10 +22,10 @@ export const handleEliminarProyecto = (id, navigate) => {
     }
 };
 
-export const handleCompletarTarea = (proyectoId, tareaId, setProyecto, id) => {
+export const handleCompletarTarea = (proyectoId, tareaId, setProyecto) => {
     if (completarTarea(proyectoId, tareaId)) {
         // Actualizar listado tras completar
-        setTimeout(() => setProyecto(traerProyectoPorID(parseInt(id))), 100);
+        setTimeout(() => setProyecto(traerProyectoPorID(parseInt(proyectoId))), 100);
     }
 };
 
