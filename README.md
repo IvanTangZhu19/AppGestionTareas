@@ -77,9 +77,26 @@ Permitir una gestión integral de tareas y proyectos con una interfaz moderna, f
   <img src="Dev/Captura en móvil (2).jpeg" width="180" alt="Editar proyecto"/>
 </p>
 
-## Diseño
+## Diagramas y Diseño
 
-[Diseño figma](https://www.figma.com/design/SwOR46bNjk6BT4nihyFB9r/Gestion_Tareas?node-id=0-1&t=MJsHqW6xSXGHeddD-1)
+A continuación se presentan los diagramas principales que guiaron la planificación y estructura de **TaskMaster**:
+
+<p align="center">
+  <img src="Diseño/Diagrama_flujo.png" width="1000" alt="Diagrama de Flujo del sistema"/>
+  <br/>
+  <em>Diagrama de flujo: muestra la lógica y recorrido general del sistema.</em>
+</p>
+
+<p align="center">
+  <img src="Diseño/Diagrama_navegacion.png" width="1000" alt="Diagrama de Navegación"/>
+  <br/>
+  <em>Diagrama de navegación: describe cómo se conectan las diferentes pantallas de la app.</em>
+</p>
+
+---
+
+🎨 Puedes explorar el diseño visual y prototipo interactivo en Figma:  
+[🔗 Ver en Figma](https://www.figma.com/design/SwOR46bNjk6BT4nihyFB9r/Gestion_Tareas?node-id=0-1&t=MJsHqW6xSXGHeddD-1)
 
 ---
 
