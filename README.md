@@ -57,7 +57,7 @@ Permitir una gestión integral de tareas y proyectos con una interfaz moderna, f
   </tr>
   <tr>
     <td align="center">
-      <img src="https://capacitorjs.com/assets/logo.svg" width="40" alt="Capacitor"/>
+      <img src="https://cdn.worldvectorlogo.com/logos/capacitor-js.svg" width="40" alt="Capacitor"/>
     </td>
     <td><strong>Capacitor</strong></td>
     <td>Plataforma para ejecutar apps web como móviles (Android/iOS)</td>
