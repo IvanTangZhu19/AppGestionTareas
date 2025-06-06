@@ -1,31 +1,28 @@
 
 <h1 align="center">TaskMaster</h1>
-<p align="center"> <em>Recuerda, calcula... y ¡gana en un flash!</em> </p>
+<p align="center"> <em>Organiza tus proyectos. Domina tus tareas.</em> </p>
 <p align="center">
-  <img src="app/src/main/ic_launcher-playstore.png" alt="Captura del juego" width="300"/>
+  <img src="Dev/playstore-icon.png" alt="Logo" width="300"/>
 </p>
 
 ---
 
-## 🧠 ¿De qué trata NúmerosFlash?
+## 🧠 ¿De qué trata TaskMaster?
 
-**NúmerosFlash** es un juego de agilidad mental que te reta a sumar o restar números que aparecen brevemente en pantalla. Memorízalos, realiza las operaciones y da tu respuesta al final.
+**TaskMaster** es una aplicación híbrida (web y móvil) diseñada para ayudarte a gestionar proyectos y tareas de forma clara, sencilla y eficiente. Perfecta para equipos o usuarios individuales que desean mantener sus pendientes bajo control, desde cualquier dispositivo.
+
 
 ### 🎯 Objetivo
-Suma (o resta) correctamente todos los números que van apareciendo en pantalla uno por uno. ¡Cada segundo cuenta!
+Permitir una gestión integral de tareas y proyectos con una interfaz moderna, fluida y accesible desde dispositivos móviles o navegador web.
 
 ---
 
 ## ⚙️ Características principales
 
-- 👤 **Modo solitario**: práctica y mejora tu cálculo mental.
-- ⏱️ **Diferentes dificultades**:
-  - Principiante: Tiempo 8 s
-  - Desafío Rápido: Tiempo 5 s
-  - Relámpago: Tiempo 3 s
-  - Flash: 1 s
-- 📈 **Estadísticas del jugador**: revisa tu progreso y mejora tu tiempo y precisión.
-- 🎮 **Interfaz fluida y moderna** usando **Jetpack Compose**.
+- 📁 **Gestión de proyectos y tareas**: crea, edita y organiza tus actividades por proyectos.
+- 🧠 **Personalización**: Permite de manera visual mediante colores clasificar los proyectos y tareas
+- 🌐 **Aplicación híbrida**: accesible como app móvil y web.
+- 🖌️ **Interfaz moderna y responsive** con diseño personalizado usando **SCSS**.
 
 ---
 
@@ -39,24 +36,31 @@ Suma (o resta) correctamente todos los números que van apareciendo en pantalla 
   </tr>
   <tr>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="40"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" alt="React"/>
     </td>
-    <td><strong>Kotlin</strong></td>
-    <td>Lenguaje principal de desarrollo</td>
+    <td><strong>React</strong></td>
+    <td>Framework principal para la interfaz</td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjC97Z8BResg5dlPqczsRCFhP6zewWX0X0e7fVPG-G7PuUZwwZVsi9OPoqJYkgqT2h0FI95SsmWzVEgpt8b8HAqFiIxZ98TFtY4lE0b8UrtVJ2HrJebRwl6C9DslsQDl9KnBIrdHS6LtkY/s1600/jetpack+compose+icon_RGB.png" width="40" alt="Jetpack Compose"/>
+      <img src="https://vitejs.dev/logo.svg" width="40" alt="Vite"/>
     </td>
-    <td><strong>Jetpack Compose</strong></td>
-    <td>UI moderna y declarativa de Android</td>
+    <td><strong>Vite</strong></td>
+    <td>Bundler rápido y moderno para desarrollo web</td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width="40" alt="Firebase"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" alt="SCSS"/>
     </td>
-    <td><strong>Firebase</strong></td>
-    <td>Autenticación, base de datos en tiempo real y estadísticas</td>
+    <td><strong>SCSS</strong></td>
+    <td>Estilos personalizados con preprocesador CSS</td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://capacitorjs.com/assets/logo.svg" width="40" alt="Capacitor"/>
+    </td>
+    <td><strong>Capacitor</strong></td>
+    <td>Plataforma para ejecutar apps web como móviles (Android/iOS)</td>
   </tr>
 </table>
 
@@ -65,33 +69,34 @@ Suma (o resta) correctamente todos los números que van apareciendo en pantalla 
 ## 🖼️ Capturas de pantalla
 
 <p align="center">
-  <img src="Capturas app (4).jpeg" width="180" alt="Pantalla de inicio"/>
-  <img src="Capturas app (6).jpeg" width="180" alt="Inicio de sesión"/>
-  <img src="Capturas app (2).jpeg" width="180" alt="Dificultad"/>
-  <img src="Capturas app (5).jpeg" width="180" alt="Juego"/>
-  <img src="Capturas app (1).jpeg" width="180" alt="Juego res"/>
-  <img src="Capturas app (3).jpeg" width="180" alt="Juego"/>
+  <img src="Dev/Captura en móvil.jpeg" width="180" alt="Home"/>
+  <img src="Dev/Captura en móvil (4).jpeg" width="180" alt="Tareas"/>
+  <img src="Dev/Captura en móvil (3).jpeg" width="180" alt="Proyectos"/>
+  <img src="Dev/Captura en móvil (5).jpeg" width="180" alt="Crear proyecto"/>
+  <img src="Dev/Captura en móvil (1).jpeg" width="180" alt="Vista de proyecto individual"/>
+  <img src="Dev/Captura en móvil (2).jpeg" width="180" alt="Editar proyecto"/>
 </p>
 
 ## Diseño
 
-[Diseño figma](https://www.figma.com/design/QLWcmwfSmM4ncZ6VChTqNn/NumerosFlash?node-id=0-1&t=dF7cjJljrQM58co2-1)
+[Diseño figma](https://www.figma.com/design/SwOR46bNjk6BT4nihyFB9r/Gestion_Tareas?node-id=0-1&t=MJsHqW6xSXGHeddD-1)
 
 ---
 
 ## 📲 Descargar
 
 **¡Disponible en Google Play!**  
-📦 [NúmerosFlash](https://play.google.com/store/apps/details?id=co.edu.upb.numerosflash)
+📦 [TaskMaster](https://play.google.com/store/apps/details?id=co.edu.upb.taskmaster)
 
 ---
 
 ## 🚧 Estado del proyecto
 
+- [x] Diseño de diagramas
 - [x] Diseño de pantallas
-- [x] Modo solitario funcional
+- [x] Desarrollo
 - [x] Publicación en Play Store
-- [ ] Modo Multijugador
+- [ ] Mejora de UI
 
 ---
 
@@ -100,23 +105,11 @@ Desarrollado por Ivan Tang Zhu
 
 
 
-# AppGestionTareas
+## Comandos
 
-Aplicación de gestión de tareas académicas desarrollado en el curso de Aplicaciones móviles
-
-- Tema: Universidad - Académico
-- Usuario: Estudiantes
-- Contexto: Sistema de gestion de tareas y proyectos
-
-
-Rama: dev
-
-Aplicación móvil desarrollado con React, SCSS y Vite
 
 - `npm install` Instala las dependencias
 - `npm run dev` Para levantar el servidor
 - `npm run build` Crea la carpeta dist con los archivos optimizados
 - `npx cap sync` Sincroniza
 - `npx cap run android` Ejecuta la aplicación en el emulador de Android Studio
-
-- Enlace a figma con el diseño: https://www.figma.com/design/SwOR46bNjk6BT4nihyFB9r/Gestion_Tareas?node-id=0-1&t=MJsHqW6xSXGHeddD-1
