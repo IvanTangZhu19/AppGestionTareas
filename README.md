@@ -30,36 +30,35 @@ Permitir una gestión integral de tareas y proyectos con una interfaz moderna, f
 
 <table>
   <tr>
-    <th>Logo</th>
     <th>Tecnología</th>
     <th>Descripción</th>
   </tr>
   <tr>
-    <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" alt="React"/>
+    <td>
+      <img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" alt="React"/>
+      <strong align="center">React</strong>
     </td>
-    <td><strong>React</strong></td>
     <td>Framework principal para la interfaz</td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="https://vitejs.dev/logo.svg" width="40" alt="Vite"/>
+    <td>
+      <img align="center" src="https://vitejs.dev/logo.svg" width="40" alt="Vite"/>
+      <strong align="center">Vite</strong>
     </td>
-    <td><strong>Vite</strong></td>
     <td>Bundler rápido y moderno para desarrollo web</td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" alt="SCSS"/>
+    <td>
+      <img align="center" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" alt="SCSS"/>
+      <strong align="center">SCSS</strong>
     </td>
-    <td><strong>SCSS</strong></td>
     <td>Estilos personalizados con preprocesador CSS</td>
   </tr>
   <tr>
-    <td align="center">
-      <img src="https://cdn.worldvectorlogo.com/logos/capacitor-js.svg" width="40" alt="Capacitor"/>
+    <td>
+      <img align="center" src="https://cdn.worldvectorlogo.com/logos/capacitor-js.svg" width="40" alt="Capacitor"/>
+      <strong align="center">Capacitor</strong>
     </td>
-    <td><strong>Capacitor</strong></td>
     <td>Plataforma para ejecutar apps web como móviles (Android/iOS)</td>
   </tr>
 </table>
