@@ -9,7 +9,7 @@
 
 ## 🧠 ¿De qué trata TaskMaster?
 
-**TaskMaster** es una aplicación híbrida (web y móvil) diseñada para ayudarte a gestionar proyectos y tareas de forma clara, sencilla y eficiente. Perfecta para equipos o usuarios individuales que desean mantener sus pendientes bajo control, desde cualquier dispositivo.
+**TaskMaster** es una aplicación híbrida (web y móvil) diseñada para ayudarte a gestionar proyectos y tareas de forma clara, sencilla y eficiente. Perfecta para usuarios individuales que desean mantener sus pendientes bajo control.
 
 
 ### 🎯 Objetivo
@@ -109,7 +109,7 @@ A continuación se presentan los diagramas principales que guiaron la planificac
 ## 🚧 Estado del proyecto
 
 - [x] Diseño de diagramas
-- [x] Diseño de pantallas
+- [x] Diseño de pantallas (papel y Figma)
 - [x] Desarrollo
 - [x] Publicación en Play Store
 - [ ] Mejora de UI
