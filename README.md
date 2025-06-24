@@ -112,7 +112,7 @@ A continuación se presentan los diagramas principales que guiaron la planificac
 - [x] Diseño de pantallas (papel y Figma)
 - [x] Desarrollo
 - [x] Publicación en Play Store
-- [ ] Mejora de UI
+- [x] Mejora de UI
 
 ---
 
@@ -121,11 +121,11 @@ Desarrollado por Ivan Tang Zhu
 
 
 
-## Comandos
+## Comandos utilizados durante desarrollo
 
 
 - `npm install` Instala las dependencias
-- `npm run dev` Para levantar el servidor
-- `npm run build` Crea la carpeta dist con los archivos optimizados
-- `npx cap sync` Sincroniza
-- `npx cap run android` Ejecuta la aplicación en el emulador de Android Studio
+- `npm run dev` Para levantar el servidor en etapa de desarrollo
+- `npm run build` Crea la carpeta dist con los archivos optimizados, los cuales se utilizan para el emulador y posteriomente al apk
+- `npx cap sync` Sincroniza la carpeta dist con app
+- `npx cap run android` Ejecuta la aplicación en el emulador de Android Studio o también se puede hacer desde el botón en Android Studio
